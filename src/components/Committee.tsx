@@ -252,10 +252,10 @@ export default function Committee() {
   const members = committee.filter((m) => !m.isPresident);
 
   const pillars = [
-    { number: "६+ वर्षे", title: "अखंड परंपरा", desc: "स्थापना २०१९ पासून अविरत" },
-    { number: "१००+", title: "समर्पित कुटुंबे", desc: "एकत्रित व उत्साही सहभाग" },
-    { number: "१० दिवस", title: "भक्तिमय सोहळा", desc: "नित्य आरती व महाप्रसाद" },
-    { number: "१०+", title: "सांस्कृतिक स्पर्धा", desc: "सर्व वयोगटांसाठी उपक्रम" },
+    { number: "८ वर्षे", title: "अखंड परंपरा", desc: "स्थापना २०१९ पासून अविरत" },
+    { number: "१५०+", title: "समर्पित कुटुंबे", desc: "एकत्रित व उत्साही सहभाग" },
+    { number: "१२ दिवस", title: "भक्तिमय सोहळा", desc: "नित्य आरती व महाप्रसाद" },
+    { number: "१४+", title: "सांस्कृतिक स्पर्धा", desc: "सर्व वयोगटांसाठी उपक्रम" },
   ];
 
   return (

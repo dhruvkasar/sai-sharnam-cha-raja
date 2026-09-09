@@ -87,7 +87,7 @@ export default function Invitation() {
               <div>
                 <p className="text-xs font-bold text-kesari uppercase tracking-wide">श्री गणेश आगमन</p>
                 <p className="text-base sm:text-lg font-bold text-shai font-display">
-                  १४ सप्टेंबर २०२६ (सोमवार)
+                  १३ सप्टेंबर २०२६ (रविवार)
                 </p>
               </div>
             </div>
@@ -97,7 +97,7 @@ export default function Invitation() {
                 <Clock size={22} />
               </div>
               <div>
-                <p className="text-xs font-bold text-amber-700 uppercase tracking-wide">श्री गणेश पूजन</p>
+                <p className="text-xs font-bold text-amber-700 uppercase tracking-wide">श्री गणेश स्थापना व पूजन</p>
                 <p className="text-base sm:text-lg font-bold text-shai font-display">
                   १४ सप्टेंबर • दुपारी ३:३० वाजता
                 </p>
@@ -111,7 +111,7 @@ export default function Invitation() {
               <div>
                 <p className="text-xs font-bold text-sindoor uppercase tracking-wide">उत्सव स्थळ व कालावधी</p>
                 <p className="text-base sm:text-lg font-bold text-shai font-display">
-                  {societyDetails.address} • {societyDetails.sthapanaDate} ते {societyDetails.visarjanDate}
+                  {societyDetails.address} • १३ सप्टेंबर ते २५ सप्टेंबर २०२६ ({societyDetails.durationText})
                 </p>
               </div>
             </div>

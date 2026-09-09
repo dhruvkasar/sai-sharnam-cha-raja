@@ -11,9 +11,9 @@ export default function EventOverview() {
     seconds: 0
   });
 
-  // Calculate live countdown to Ganeshotsav 2026 (September 14, 2026)
+  // Calculate live countdown to Ganeshotsav 2026 (Arrival on September 13, 2026)
   useEffect(() => {
-    const targetDate = new Date('2026-09-14T00:00:00');
+    const targetDate = new Date('2026-09-13T00:00:00');
 
     const updateCountdown = () => {
       const now = new Date();
@@ -119,7 +119,16 @@ export default function EventOverview() {
             className="inline-flex items-center gap-2.5 bg-black/60 backdrop-blur-md px-4 sm:px-5 py-2.5 rounded-2xl border border-sona/35 shadow-lg text-sm sm:text-base"
           >
             <Calendar size={18} className="text-kesari shrink-0" />
-            <span>श्री आगमन: <strong className="text-sona font-bold">१४ सप्टेंबर २०२६</strong></span>
+            <span>श्री आगमन: <strong className="text-sona font-bold">१३ सप्टेंबर २०२६</strong></span>
+          </motion.div>
+
+          <motion.div 
+            whileHover={{ scale: 1.04, y: -2 }}
+            transition={{ type: "spring", stiffness: 300 }}
+            className="inline-flex items-center gap-2.5 bg-black/60 backdrop-blur-md px-4 sm:px-5 py-2.5 rounded-2xl border border-sona/35 shadow-lg text-sm sm:text-base"
+          >
+            <Calendar size={18} className="text-amber-400 shrink-0" />
+            <span>श्री गणेश स्थापना: <strong className="text-sona font-bold">१४ सप्टेंबर २०२६</strong></span>
           </motion.div>
 
           <motion.div 
@@ -128,7 +137,7 @@ export default function EventOverview() {
             className="inline-flex items-center gap-2.5 bg-black/60 backdrop-blur-md px-4 sm:px-5 py-2.5 rounded-2xl border border-yellow-300/40 shadow-lg text-sm sm:text-base ring-1 ring-yellow-400/20"
           >
             <Clock size={18} className="text-yellow-300 shrink-0" />
-            <span>श्री गणेश पूजन: <strong className="text-yellow-300 font-bold">१४ सप्टेंबर • दुपारी ३:३० वाजता</strong></span>
+            <span>श्री गणेश पूजन: <strong className="text-yellow-300 font-bold">१४ सप्टेंबर • दुपारी ३:३०</strong></span>
           </motion.div>
 
           <motion.div 
