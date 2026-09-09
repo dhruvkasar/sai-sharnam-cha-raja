@@ -4,37 +4,36 @@ import { Calendar, MapPin, Sparkles, Heart } from 'lucide-react';
 
 export default function Invitation() {
   return (
-    <section id="invitation" className="py-20 px-6 bg-gradient-to-b from-haldi via-[#FFF5DE] to-haldi relative overflow-hidden">
-      {/* Background Image & Texture */}
-      <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+    <section id="invitation" className="pt-24 pb-16 sm:py-24 px-3.5 sm:px-6 bg-gradient-to-b from-haldi via-[#FFF5DE] to-haldi relative overflow-hidden scroll-mt-20 sm:scroll-mt-24">
+      {/* Background Image & Texture - Properly contained and centered */}
+      <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden flex items-center justify-center">
         <img 
           src="/bg.png" 
           alt="" 
-          className="w-full h-full object-cover object-center opacity-25 mix-blend-multiply filter blur-[0.5px]"
+          className="w-full max-w-[320px] sm:max-w-[500px] md:max-w-2xl lg:max-w-3xl aspect-square object-contain opacity-10 sm:opacity-15 mix-blend-multiply select-none"
           onError={(e) => {
-            // Hide image element gracefully if not present
             (e.currentTarget as HTMLElement).style.display = 'none';
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-haldi/80 via-[#FFF5DE]/70 to-haldi/90" />
+        <div className="absolute inset-0 bg-gradient-to-b from-haldi/85 via-[#FFF5DE]/75 to-haldi/90" />
       </div>
 
       <div className="max-w-4xl mx-auto relative z-10">
         
-        {/* Royal Patrika / Invitation Letter Card with bg.png texture */}
+        {/* Royal Patrika / Invitation Letter Card with scaled Sai Sharnam Cha Raja watermark */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.6 }}
-          className="bg-white/95 backdrop-blur-md rounded-3xl p-8 sm:p-12 md:p-14 shadow-2xl border-4 border-double border-sona/50 relative overflow-hidden text-center"
+          className="bg-white/95 backdrop-blur-md rounded-2xl sm:rounded-3xl p-5 sm:p-10 md:p-14 shadow-2xl border-3 sm:border-4 border-double border-sona/50 relative overflow-hidden text-center"
         >
-          {/* Card inner background texture */}
-          <div className="absolute inset-0 pointer-events-none opacity-10 mix-blend-multiply">
+          {/* Card inner watermark: Sai Sharnam Cha Raja scaled to fit perfectly on mobile without cropping */}
+          <div className="absolute inset-0 pointer-events-none flex items-center justify-center overflow-hidden p-4 sm:p-8">
             <img 
               src="/bg.png" 
-              alt="" 
-              className="w-full h-full object-cover object-center"
+              alt="साई शरणम चा राजा" 
+              className="w-full max-w-[270px] sm:max-w-[380px] md:max-w-[460px] aspect-square object-contain opacity-12 sm:opacity-15 mix-blend-multiply select-none"
               onError={(e) => {
                 (e.currentTarget as HTMLElement).style.display = 'none';
               }}
