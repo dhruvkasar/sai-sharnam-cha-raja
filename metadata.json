@@ -1,0 +1,6 @@
+{
+  "name": "Sai Sharanam Cha Raja",
+  "description": "Ganeshotsav static society website with competitions and schedule.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+@theme {
+  --color-kesari: #FF7A1A;
+  --color-sindoor: #8B1E3F;
+  --color-sona: #C89B3C;
+  --color-haldi: #FFF8E9;
+  --color-mor: #0F5E5E;
+  --color-shai: #241A16;
+  
+  --font-display: "Tiro Devanagari Marathi", "Noto Serif Devanagari", "Mukta", serif;
+  --font-body: "Mukta", sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: "liga" 1, "dlig" 1, "calt" 1;
+    letter-spacing: normal;
+  }
+  body {
+    @apply bg-haldi text-shai font-body antialiased;
+    overflow-x: hidden;
+    font-feature-settings: "liga" 1, "dlig" 1, "calt" 1;
+    letter-spacing: normal;
+  }
+}
