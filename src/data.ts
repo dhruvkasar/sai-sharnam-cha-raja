@@ -2,6 +2,9 @@ export const societyDetails = {
   name: "साई शरणम चा राजा",
   established: 2019,
   year: 2026,
+  aagmanDate: "१४ सप्टेंबर २०२६ (सोमवार)",
+  pujanDate: "१४ सप्टेंबर २०२६ (सोमवार)",
+  pujanTime: "दुपारी ३:३० वाजता",
   sthapanaDate: "१४ सप्टेंबर २०२६ (सोमवार)",
   visarjanDate: "२५ सप्टेंबर २०२६ (शुक्रवार)",
   sthapanaDay: "सोमवार, १४ सप्टेंबर २०२६",
@@ -247,11 +250,40 @@ export const aartiTimings = [
   { time: "संध्याकाळी ८:३०", desc: "नित्य सांज आरती व महाप्रसाद" }
 ];
 
-export const specialScheduleEvents = [
+export interface SpecialScheduleEvent {
+  date: string;
+  day: string;
+  title: string;
+  badge: string;
+  desc: string;
+  time: string;
+  highlight?: boolean;
+}
+
+export const specialScheduleEvents: SpecialScheduleEvent[] = [
+  {
+    date: "१४ सप्टेंबर २०२६",
+    day: "सोमवार",
+    title: "श्री गणेश आगमन सोहळा",
+    badge: "महा आगमन",
+    desc: "आपल्या लाडक्या 'साई शरणम चा राजा'चे ढोल-ताशांच्या गजरात व भक्तीमय वातावरणात भव्य आगमन.",
+    time: "१४ सप्टेंबर (सोमवार)",
+    highlight: true
+  },
+  {
+    date: "१४ सप्टेंबर २०२६",
+    day: "सोमवार",
+    title: "श्री गणेश प्रतिष्ठापना व पूजन",
+    badge: "विधीवत पूजन",
+    desc: "वेदमंत्रांच्या जयघोषात श्री गणेशाची विधिवत प्रतिष्ठापना व महापूजन सोहळा.",
+    time: "दुपारी ३:३० वाजता",
+    highlight: true
+  },
   {
     date: "२४ सप्टेंबर २०२६",
     day: "गुरुवार",
     title: "श्री सत्यनारायण महापूजा",
+    badge: "विशेष महापूजा",
     desc: "सोसायटीतील सर्व भाविकांसाठी सामूहिक श्री सत्यनारायण महापूजा व तीर्थप्रसाद सोहळा.",
     time: "सकाळी १०:३० वाजता"
   }

@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 import { societyDetails } from '../data';
-import { Calendar, MapPin, Sparkles, Heart } from 'lucide-react';
+import { Calendar, MapPin, Sparkles, Heart, Clock } from 'lucide-react';
 
 export default function Invitation() {
   return (
@@ -79,27 +79,39 @@ export default function Invitation() {
           </div>
 
           {/* Event Highlights Capsule Grid */}
-          <div className="grid sm:grid-cols-2 gap-4 my-8 text-left max-w-xl mx-auto">
+          <div className="grid sm:grid-cols-2 gap-3.5 sm:gap-4 my-8 text-left max-w-2xl mx-auto">
             <div className="bg-haldi/70 p-4 rounded-2xl border border-sona/30 flex items-start gap-3.5">
               <div className="p-2.5 bg-kesari/15 rounded-xl text-kesari shrink-0 mt-0.5">
                 <Calendar size={22} />
               </div>
               <div>
-                <p className="text-xs font-bold text-kesari uppercase tracking-wide">उत्सव कालावधी</p>
+                <p className="text-xs font-bold text-kesari uppercase tracking-wide">श्री गणेश आगमन</p>
                 <p className="text-base sm:text-lg font-bold text-shai font-display">
-                  {societyDetails.sthapanaDate} ते {societyDetails.visarjanDate}
+                  १४ सप्टेंबर २०२६ (सोमवार)
                 </p>
               </div>
             </div>
 
             <div className="bg-haldi/70 p-4 rounded-2xl border border-sona/30 flex items-start gap-3.5">
+              <div className="p-2.5 bg-amber-500/15 rounded-xl text-amber-700 shrink-0 mt-0.5">
+                <Clock size={22} />
+              </div>
+              <div>
+                <p className="text-xs font-bold text-amber-700 uppercase tracking-wide">श्री गणेश पूजन</p>
+                <p className="text-base sm:text-lg font-bold text-shai font-display">
+                  १४ सप्टेंबर • दुपारी ३:३० वाजता
+                </p>
+              </div>
+            </div>
+
+            <div className="bg-haldi/70 p-4 rounded-2xl border border-sona/30 flex items-start gap-3.5 sm:col-span-2">
               <div className="p-2.5 bg-sindoor/15 rounded-xl text-sindoor shrink-0 mt-0.5">
                 <MapPin size={22} />
               </div>
               <div>
-                <p className="text-xs font-bold text-sindoor uppercase tracking-wide">उत्सव स्थळ</p>
+                <p className="text-xs font-bold text-sindoor uppercase tracking-wide">उत्सव स्थळ व कालावधी</p>
                 <p className="text-base sm:text-lg font-bold text-shai font-display">
-                  {societyDetails.address}
+                  {societyDetails.address} • {societyDetails.sthapanaDate} ते {societyDetails.visarjanDate}
                 </p>
               </div>
             </div>

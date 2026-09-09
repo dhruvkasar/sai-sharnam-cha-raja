@@ -103,7 +103,7 @@ export default function EventOverview() {
             visible: { 
               opacity: 1, 
               y: 0, 
-              scale: 1,
+              scale: 1, 
               filter: 'blur(0px)',
               transition: {
                 duration: 1.2,
@@ -116,19 +116,28 @@ export default function EventOverview() {
           <motion.div 
             whileHover={{ scale: 1.04, y: -2 }}
             transition={{ type: "spring", stiffness: 300 }}
-            className="inline-flex items-center gap-2.5 bg-black/60 backdrop-blur-md px-5 py-2.5 rounded-2xl border border-sona/35 shadow-lg text-sm sm:text-base"
+            className="inline-flex items-center gap-2.5 bg-black/60 backdrop-blur-md px-4 sm:px-5 py-2.5 rounded-2xl border border-sona/35 shadow-lg text-sm sm:text-base"
           >
             <Calendar size={18} className="text-kesari shrink-0" />
-            <span>श्री आगमन: <strong className="text-sona font-bold">{societyDetails.sthapanaDate}</strong></span>
+            <span>श्री आगमन: <strong className="text-sona font-bold">१४ सप्टेंबर २०२६</strong></span>
           </motion.div>
 
           <motion.div 
             whileHover={{ scale: 1.04, y: -2 }}
             transition={{ type: "spring", stiffness: 300 }}
-            className="inline-flex items-center gap-2.5 bg-black/60 backdrop-blur-md px-5 py-2.5 rounded-2xl border border-sona/35 shadow-lg text-sm sm:text-base"
+            className="inline-flex items-center gap-2.5 bg-black/60 backdrop-blur-md px-4 sm:px-5 py-2.5 rounded-2xl border border-yellow-300/40 shadow-lg text-sm sm:text-base ring-1 ring-yellow-400/20"
+          >
+            <Clock size={18} className="text-yellow-300 shrink-0" />
+            <span>श्री गणेश पूजन: <strong className="text-yellow-300 font-bold">१४ सप्टेंबर • दुपारी ३:३० वाजता</strong></span>
+          </motion.div>
+
+          <motion.div 
+            whileHover={{ scale: 1.04, y: -2 }}
+            transition={{ type: "spring", stiffness: 300 }}
+            className="inline-flex items-center gap-2.5 bg-black/60 backdrop-blur-md px-4 sm:px-5 py-2.5 rounded-2xl border border-sona/35 shadow-lg text-sm sm:text-base"
           >
             <Flame size={18} className="text-amber-400 shrink-0" />
-            <span>अनंत विसर्जन: <strong className="text-sona font-bold">{societyDetails.visarjanDate}</strong></span>
+            <span>अनंत विसर्जन: <strong className="text-sona font-bold">२५ सप्टेंबर २०२६</strong></span>
           </motion.div>
         </motion.div>
 
