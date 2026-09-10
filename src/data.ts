@@ -129,6 +129,32 @@ export const competitions: CompetitionItem[] = [
     categoryBadge: "कौशल्य स्पर्धा",
     formUrl: "https://docs.google.com/forms/d/e/1FAIpQLSdMBPXmbYRWelMSd5dIVTg_ZhEkJBn2vbWXxTRF3pGmsCZDBQ/viewform?usp=header"
   },
+  {
+    id: 15,
+    day: 3,
+    dayLabel: "Day 3",
+    date: "१८ सप्टेंबर",
+    time: "सायंकाळी ६:०० ते ८:०० मध्ये",
+    title: "चेस स्पर्धा",
+    englishTitle: "Chess Competition",
+    audience: "मुले, मुली, पुरुष, महिला (सर्व गट)",
+    desc: "एकाग्रता, बुद्धिमत्ता व अचूक डावपेचांची थरारक चेस स्पर्धा. आपल्या चाली रचून विजय मिळवा!",
+    categoryBadge: "बौद्धिक खेळ",
+    formUrl: "https://docs.google.com/forms/d/e/1FAIpQLSf8SvP5pHjLdPECbFpEVTcL-hVxA9wB8oeHpBeGg3atni0szg/viewform?usp=publish-editor"
+  },
+  {
+    id: 16,
+    day: 3,
+    dayLabel: "Day 3",
+    date: "१८ सप्टेंबर",
+    time: "सायंकाळी ६:०० ते ८:०० मध्ये",
+    title: "बुद्धिबळ स्पर्धा",
+    englishTitle: "Buddhibal Championship",
+    audience: "मुले, मुली, पुरुष, महिला (सर्व गट)",
+    desc: "पारंपरिक व आधुनिक डावांची चुरस, विचारशक्ती आणि रणनीतीची महापरीक्षा.",
+    categoryBadge: "बौद्धिक खेळ",
+    formUrl: "https://docs.google.com/forms/d/e/1FAIpQLSdOZ-Z-god5i98gPKyRaAYNxoTsGaXRX-Lvs75_-AcJXky32Q/viewform?usp=dialog"
+  },
 
   // Day 4: १९ सप्टेंबर (6:00 PM to 8:00 PM)
   {
