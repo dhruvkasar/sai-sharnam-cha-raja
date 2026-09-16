@@ -32,10 +32,13 @@ export interface CompetitionItem {
   note?: string;
   categoryBadge?: string;
   formUrl?: string;
+  customActionText?: string;
+  customDateNotice?: string;
+  isCompleted?: boolean;
 }
 
 export const competitionDays = [
-  { day: 1, date: "१६ सप्टेंबर", dayLabel: "Day 1", time: "सायंकाळी ६:०० ते ८:०० मध्ये" },
+  { day: 1, date: "१६ सप्टेंबर", dayLabel: "Day 1", time: "सायंकाळी ६:०० ते ८:०० मध्ये", isCompleted: true },
   { day: 2, date: "१७ सप्टेंबर", dayLabel: "Day 2", time: "सायंकाळी ६:०० ते ८:०० मध्ये" },
   { day: 3, date: "१८ सप्टेंबर", dayLabel: "Day 3", time: "सायंकाळी ६:०० ते ८:०० मध्ये" },
   { day: 4, date: "१९ सप्टेंबर", dayLabel: "Day 4", time: "सायंकाळी ६:०० ते ८:०० मध्ये" },
@@ -46,7 +49,7 @@ export const competitionDays = [
 ];
 
 export const competitions: CompetitionItem[] = [
-  // Day 1: १६ सप्टेंबर (6:00 PM to 8:00 PM)
+  // Day 1: १६ सप्टेंबर (6:00 PM to 8:00 PM) - संपन्न (Completed)
   {
     id: 1,
     day: 1,
@@ -58,6 +61,7 @@ export const competitions: CompetitionItem[] = [
     audience: "१ ते २, ३ ते ५, ६ ते १०",
     desc: "मुलांच्या कलागुणांना व कल्पकतेला वाव देणारी मनमोहक चित्रकला स्पर्धा.",
     categoryBadge: "चित्रकला",
+    isCompleted: true,
     formUrl: "https://docs.google.com/forms/d/e/1FAIpQLScovZ2wXMu1oXFS5inIKcTlIjB9djsF7LjOpmcpdUT1WjQyYA/viewform?usp=header"
   },
   {
@@ -71,6 +75,7 @@ export const competitions: CompetitionItem[] = [
     audience: "१ ते २ (मुले आणि मुली), ३ ते ५ (मुले आणि मुली)",
     desc: "एकाग्रता आणि समतोलाची पारंपारिक व लोकप्रिय लिंबू चमचा शर्यत.",
     categoryBadge: "पारंपारिक खेळ",
+    isCompleted: true,
     formUrl: "https://docs.google.com/forms/d/e/1FAIpQLSdp7ac1A9d-hvwK5nwdpDmAyW2cbAQTO5ltdnVjNTz4MoTq5g/viewform?usp=header"
   },
   {
@@ -84,6 +89,7 @@ export const competitions: CompetitionItem[] = [
     audience: "ज्युनियर ते सिनिअर (मुले आणि मुली), १ ते २ (मुले आणि मुली)",
     desc: "लहान मुलांसाठी ऊर्जावान आणि मनसोक्त आनंदाची उड्यांची शर्यत.",
     categoryBadge: "बालखेळ",
+    isCompleted: true,
     formUrl: "https://docs.google.com/forms/d/e/1FAIpQLSfpQujgk0xJejmXDNETMx1JShVcC4QtPwLHmbSRyVMTRant4g/viewform?usp=header"
   },
 
@@ -128,32 +134,6 @@ export const competitions: CompetitionItem[] = [
     desc: "पाय खाली न टेकवता सर्वांत संथ गतीने सायकल चालवण्याची कौशल्यपूर्ण स्पर्धा.",
     categoryBadge: "कौशल्य स्पर्धा",
     formUrl: "https://docs.google.com/forms/d/e/1FAIpQLSdMBPXmbYRWelMSd5dIVTg_ZhEkJBn2vbWXxTRF3pGmsCZDBQ/viewform?usp=header"
-  },
-  {
-    id: 15,
-    day: 3,
-    dayLabel: "Day 3",
-    date: "१८ सप्टेंबर",
-    time: "सायंकाळी ६:०० ते ८:०० मध्ये",
-    title: "चेस स्पर्धा",
-    englishTitle: "Chess Competition",
-    audience: "मुले, मुली, पुरुष, महिला (सर्व गट)",
-    desc: "एकाग्रता, बुद्धिमत्ता व अचूक डावपेचांची थरारक चेस स्पर्धा. आपल्या चाली रचून विजय मिळवा!",
-    categoryBadge: "बौद्धिक खेळ",
-    formUrl: "https://docs.google.com/forms/d/e/1FAIpQLSf8SvP5pHjLdPECbFpEVTcL-hVxA9wB8oeHpBeGg3atni0szg/viewform?usp=publish-editor"
-  },
-  {
-    id: 16,
-    day: 3,
-    dayLabel: "Day 3",
-    date: "१८ सप्टेंबर",
-    time: "सायंकाळी ६:०० ते ८:०० मध्ये",
-    title: "बुद्धिबळ स्पर्धा",
-    englishTitle: "Buddhibal Championship",
-    audience: "मुले, मुली, पुरुष, महिला (सर्व गट)",
-    desc: "पारंपरिक व आधुनिक डावांची चुरस, विचारशक्ती आणि रणनीतीची महापरीक्षा.",
-    categoryBadge: "बौद्धिक खेळ",
-    formUrl: "https://docs.google.com/forms/d/e/1FAIpQLSdOZ-Z-god5i98gPKyRaAYNxoTsGaXRX-Lvs75_-AcJXky32Q/viewform?usp=dialog"
   },
 
   // Day 4: १९ सप्टेंबर (6:00 PM to 8:00 PM)
@@ -241,6 +221,19 @@ export const competitions: CompetitionItem[] = [
     categoryBadge: "मनोरंजन",
     formUrl: "https://docs.google.com/forms/d/e/1FAIpQLScVW7HZurqUneS6edzmVM2F4QUshYkFicFyqN2WrKURW23boQ/viewform?usp=header"
   },
+  {
+    id: 17,
+    day: 7,
+    dayLabel: "Day 7",
+    date: "२३ सप्टेंबर",
+    time: "सायंकाळी ६:०० ते ८:०० मध्ये",
+    title: "जोडप्यांचे खेळ",
+    englishTitle: "Couple Games",
+    audience: "फक्त लग्न झालेले जोडपे (विवाहित दांपत्य)",
+    desc: "सोसायटीतील सर्व विवाहित जोडप्यांसाठी विशेष मनोरंजक, मजेशीर आणि हास्यविनोदी खेळ.",
+    categoryBadge: "जोडप्यांचे खेळ",
+    customActionText: "फक्त लग्न झालेले जोडपे"
+  },
 
   // Day 8: २४ सप्टेंबर (6:00 PM to 10:00 PM)
   {
@@ -268,6 +261,36 @@ export const competitions: CompetitionItem[] = [
     desc: "ऐतिहासिक, सामाजिक व पौराणिक पात्रांची सुंदर वेशभूषा स्पर्धा.",
     categoryBadge: "वेशभूषा",
     formUrl: "https://docs.google.com/forms/d/e/1FAIpQLSe9yn5WsrRHhJotBzSVGFRxOVdm1MxBDHduS2_R28T1Z1TeyA/viewform?usp=header"
+  },
+
+  // विशेष स्पर्धा - तारीख लवकरच जाहीर होणार
+  {
+    id: 15,
+    day: 0,
+    dayLabel: "लवकरच जाहीर",
+    date: "सोसायटी ग्रुपवर कळवले जाईल",
+    time: "सोसायटी ग्रुपवर कळवले जाईल",
+    title: "चेस स्पर्धा",
+    englishTitle: "Chess Competition",
+    audience: "मुले, मुली, पुरुष, महिला (सर्व गट)",
+    desc: "एकाग्रता, बुद्धिमत्ता व अचूक डावपेचांची थरारक चेस स्पर्धा. आपल्या चाली रचून विजय मिळवा!",
+    categoryBadge: "बौद्धिक खेळ",
+    formUrl: "https://docs.google.com/forms/d/e/1FAIpQLSf8SvP5pHjLdPECbFpEVTcL-hVxA9wB8oeHpBeGg3atni0szg/viewform?usp=publish-editor",
+    customDateNotice: "तारीख व वेळ लवकरच सोसायटी ग्रुपवर कळवण्यात येईल"
+  },
+  {
+    id: 16,
+    day: 0,
+    dayLabel: "लवकरच जाहीर",
+    date: "सोसायटी ग्रुपवर कळवले जाईल",
+    time: "सोसायटी ग्रुपवर कळवले जाईल",
+    title: "बुद्धिबळ स्पर्धा",
+    englishTitle: "Buddhibal Championship",
+    audience: "मुले, मुली, पुरुष, महिला (सर्व गट)",
+    desc: "पारंपरिक व आधुनिक डावांची चुरस, विचारशक्ती आणि रणनीतीची महापरीक्षा.",
+    categoryBadge: "बौद्धिक खेळ",
+    formUrl: "https://docs.google.com/forms/d/e/1FAIpQLSdOZ-Z-god5i98gPKyRaAYNxoTsGaXRX-Lvs75_-AcJXky32Q/viewform?usp=dialog",
+    customDateNotice: "तारीख व वेळ लवकरच सोसायटी ग्रुपवर कळवण्यात येईल"
   }
 ];
 
