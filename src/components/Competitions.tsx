@@ -16,12 +16,15 @@ import {
   CheckCircle2, 
   PartyPopper,
   Check,
-  X
+  X,
+  Info,
+  HelpCircle
 } from 'lucide-react';
 
 export default function Competitions() {
   const [selectedDay, setSelectedDay] = useState<number | 'all' | 'tba' | 'completed' | 'upcoming'>('all');
   const [showNoticeBanner, setShowNoticeBanner] = useState(true);
+  const [showChangesTooltip, setShowChangesTooltip] = useState(false);
 
   const completedCount = competitions.filter(c => c.isCompleted).length;
   const upcomingCount = competitions.filter(c => !c.isCompleted).length;
@@ -143,11 +146,12 @@ export default function Competitions() {
           )}
         </AnimatePresence>
 
-        {/* Quick Filter Tool (All, Upcoming, Completed, TBA) */}
-        <div className="mb-4 flex flex-wrap items-center justify-center gap-2 select-none text-xs sm:text-sm">
+        {/* Quick Filter Tool (All, Upcoming, Completed, TBA) + Changes Tooltip */}
+        <div className="mb-4 flex flex-wrap items-center justify-center gap-2 select-none text-xs sm:text-sm relative">
           <button
             type="button"
             onClick={() => setSelectedDay('all')}
+            title="सर्व स्पर्धा पाहा (एकूण १२ स्पर्धा)"
             className={`px-3.5 py-1.5 rounded-full font-semibold transition-all border flex items-center gap-1.5 cursor-pointer ${
               selectedDay === 'all'
                 ? 'bg-sona text-shai border-yellow-200 shadow-md font-bold scale-105'
@@ -161,6 +165,7 @@ export default function Competitions() {
           <button
             type="button"
             onClick={() => setSelectedDay('completed')}
+            title="१६, १७, १८ आणि १९ सप्टेंबरच्या संपन्न झालेल्या स्पर्धा पाहा"
             className={`px-3.5 py-1.5 rounded-full font-semibold transition-all border flex items-center gap-1.5 cursor-pointer ${
               selectedDay === 'completed'
                 ? 'bg-emerald-600 text-white border-emerald-300 shadow-md font-bold scale-105'
@@ -174,6 +179,7 @@ export default function Competitions() {
           <button
             type="button"
             onClick={() => setSelectedDay('upcoming')}
+            title="चालू आणि पुढील तारखांच्या आगामी स्पर्धा पाहा"
             className={`px-3.5 py-1.5 rounded-full font-semibold transition-all border flex items-center gap-1.5 cursor-pointer ${
               selectedDay === 'upcoming'
                 ? 'bg-sona text-shai border-yellow-200 shadow-md font-bold scale-105'
@@ -183,6 +189,87 @@ export default function Competitions() {
             <Sparkles size={14} className="text-yellow-300" />
             <span>चालू / आगामी स्पर्धा ({upcomingCount})</span>
           </button>
+
+          {/* Tooltip trigger button for changes info */}
+          <div className="relative">
+            <button
+              type="button"
+              onClick={() => setShowChangesTooltip(!showChangesTooltip)}
+              onMouseEnter={() => setShowChangesTooltip(true)}
+              title="नवीन बदल व सूचना पाहा (कलिक करा)"
+              aria-label="स्पर्धेतील महत्त्वाचे बदल पाहा"
+              className={`px-3 py-1.5 rounded-full text-xs font-semibold transition-all border flex items-center gap-1.5 cursor-pointer shadow-sm ${
+                showChangesTooltip 
+                  ? 'bg-amber-400 text-amber-950 border-white ring-2 ring-amber-300' 
+                  : 'bg-amber-500/20 text-yellow-300 border-amber-400/50 hover:bg-amber-500/30'
+              }`}
+            >
+              <HelpCircle size={14} className="text-yellow-300 shrink-0" />
+              <span>बदल / सूचना टूलटिप</span>
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-yellow-300"></span>
+              </span>
+            </button>
+
+            {/* Tooltip Popover */}
+            <AnimatePresence>
+              {showChangesTooltip && (
+                <motion.div
+                  initial={{ opacity: 0, y: 8, scale: 0.95 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: 8, scale: 0.95 }}
+                  transition={{ duration: 0.15 }}
+                  className="absolute right-0 sm:left-1/2 sm:-translate-x-1/2 top-full mt-2 w-80 sm:w-96 p-4 rounded-xl bg-gradient-to-br from-amber-950/95 via-stone-900/95 to-amber-950/95 border-2 border-yellow-400/70 shadow-2xl backdrop-blur-md z-50 text-left text-xs"
+                >
+                  <div className="flex items-start justify-between gap-2 mb-2 pb-2 border-b border-yellow-400/30">
+                    <div className="flex items-center gap-1.5 text-yellow-300 font-bold">
+                      <Sparkles size={14} className="text-yellow-400" />
+                      <span>नवीन झालेले बदल व अपडेट्स</span>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={() => setShowChangesTooltip(false)}
+                      className="p-1 text-haldi/60 hover:text-white rounded-lg transition-colors cursor-pointer"
+                      title="बंद करा"
+                    >
+                      <X size={13} />
+                    </button>
+                  </div>
+
+                  <div className="space-y-2 text-haldi/90">
+                    <div className="flex items-start gap-2 bg-black/40 p-2 rounded-lg border border-emerald-500/30">
+                      <CheckCircle2 size={14} className="text-emerald-400 shrink-0 mt-0.5" />
+                      <div>
+                        <strong className="text-emerald-300">१६, १७, १८ आणि १९ सप्टेंबर:</strong>
+                        <p className="text-[11px] text-gray-200">या दिवसांच्या सर्व ८ स्पर्धा यशस्वीरीत्या संपन्न झाल्या आहेत. (त्यावर 'संपन्न' शिक्का आहे)</p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-2 bg-black/40 p-2 rounded-lg border border-amber-500/30">
+                      <Heart size={14} className="text-pink-400 shrink-0 mt-0.5" />
+                      <div>
+                        <strong className="text-yellow-300">२३ सप्टेंबर - जोडप्यांचे खेळ:</strong>
+                        <p className="text-[11px] text-gray-200">फक्त लग्न झालेले जोडपे सहभागी होऊ शकतात. नाव नोंदणी सुरू आहे!</p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-2 bg-black/40 p-2 rounded-lg border border-cyan-500/30">
+                      <Bell size={14} className="text-cyan-400 shrink-0 mt-0.5" />
+                      <div>
+                        <strong className="text-cyan-300">बुद्धिबळ (चेस) स्पर्धा:</strong>
+                        <p className="text-[11px] text-gray-200">या स्पर्धेची तारीख लवकरच सोसायटी व्हॉट्सअॅप ग्रुपवर जाहीर करण्यात येईल.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="mt-3 pt-2 text-[10px] text-haldi/70 border-t border-yellow-400/20 text-center">
+                    टूलटिप बंद करण्यासाठी 'X' किंवा बाहेर क्लिक करा
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
         </div>
 
         {/* Day Filter Pills (Sticky-friendly or horizontal scroll) */}
