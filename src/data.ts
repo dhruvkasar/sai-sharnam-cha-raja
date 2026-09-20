@@ -39,9 +39,9 @@ export interface CompetitionItem {
 
 export const competitionDays = [
   { day: 1, date: "१६ सप्टेंबर", dayLabel: "Day 1", time: "सायंकाळी ६:०० ते ८:०० मध्ये", isCompleted: true },
-  { day: 2, date: "१७ सप्टेंबर", dayLabel: "Day 2", time: "सायंकाळी ६:०० ते ८:०० मध्ये" },
-  { day: 3, date: "१८ सप्टेंबर", dayLabel: "Day 3", time: "सायंकाळी ६:०० ते ८:०० मध्ये" },
-  { day: 4, date: "१९ सप्टेंबर", dayLabel: "Day 4", time: "सायंकाळी ६:०० ते ८:०० मध्ये" },
+  { day: 2, date: "१७ सप्टेंबर", dayLabel: "Day 2", time: "सायंकाळी ६:०० ते ८:०० मध्ये", isCompleted: true },
+  { day: 3, date: "१८ सप्टेंबर", dayLabel: "Day 3", time: "सायंकाळी ६:०० ते ८:०० मध्ये", isCompleted: true },
+  { day: 4, date: "१९ सप्टेंबर", dayLabel: "Day 4", time: "सायंकाळी ६:०० ते ८:०० मध्ये", isCompleted: true },
   { day: 5, date: "२१ सप्टेंबर", dayLabel: "Day 5", time: "सायंकाळी ६:०० ते १०:०० मध्ये" },
   { day: 6, date: "२२ सप्टेंबर", dayLabel: "Day 6", time: "सायंकाळी ६:०० ते १०:०० मध्ये" },
   { day: 7, date: "२३ सप्टेंबर", dayLabel: "Day 7", time: "सायंकाळी ६:०० ते ८:०० मध्ये" },
@@ -93,7 +93,7 @@ export const competitions: CompetitionItem[] = [
     formUrl: "https://docs.google.com/forms/d/e/1FAIpQLSfpQujgk0xJejmXDNETMx1JShVcC4QtPwLHmbSRyVMTRant4g/viewform?usp=header"
   },
 
-  // Day 2: १७ सप्टेंबर (6:00 PM to 8:00 PM)
+  // Day 2: १७ सप्टेंबर (6:00 PM to 8:00 PM) - संपन्न (Completed)
   {
     id: 4,
     day: 2,
@@ -105,6 +105,7 @@ export const competitions: CompetitionItem[] = [
     audience: "१ ते २ (मुले आणि मुली), ३ ते ५ (मुले आणि मुली)",
     desc: "एकमेकांमधील ताळमेळ आणि मैत्रीची परीक्षा घेणारी रोमांचक शर्यत.",
     categoryBadge: "सांघिक खेळ",
+    isCompleted: true,
     formUrl: "https://docs.google.com/forms/d/e/1FAIpQLSfPupb51NG7iVPGNDlUg2Kv9JtMMLoKiX6pceTR0ojW1yqKaQ/viewform?usp=header"
   },
   {
@@ -118,10 +119,11 @@ export const competitions: CompetitionItem[] = [
     audience: "१ ते २ (मुले आणि मुली), ३ ते ५ (मुले आणि मुली)",
     desc: "डोक्यावर पुस्तक ठेवून अचूक समतोल साधत पुढे जाण्याची मजेदार स्पर्धा.",
     categoryBadge: "समतोल खेळ",
+    isCompleted: true,
     formUrl: "https://docs.google.com/forms/d/e/1FAIpQLSdXLStsspkmEBSmNP23wIE1BTeyV4G3jYywtSvVWtMjq44O-g/viewform?usp=header"
   },
 
-  // Day 3: १८ सप्टेंबर (6:00 PM to 8:00 PM)
+  // Day 3: १८ सप्टेंबर (6:00 PM to 8:00 PM) - संपन्न (Completed)
   {
     id: 6,
     day: 3,
@@ -133,10 +135,11 @@ export const competitions: CompetitionItem[] = [
     audience: "खुला गट - मुले आणि मुली (Open Category)",
     desc: "पाय खाली न टेकवता सर्वांत संथ गतीने सायकल चालवण्याची कौशल्यपूर्ण स्पर्धा.",
     categoryBadge: "कौशल्य स्पर्धा",
+    isCompleted: true,
     formUrl: "https://docs.google.com/forms/d/e/1FAIpQLSdMBPXmbYRWelMSd5dIVTg_ZhEkJBn2vbWXxTRF3pGmsCZDBQ/viewform?usp=header"
   },
 
-  // Day 4: १९ सप्टेंबर (6:00 PM to 8:00 PM)
+  // Day 4: १९ सप्टेंबर (6:00 PM to 8:00 PM) - संपन्न (Completed)
   {
     id: 7,
     day: 4,
@@ -148,6 +151,7 @@ export const competitions: CompetitionItem[] = [
     audience: "खुला गट - मुले आणि मुली",
     desc: "प्रभावी विचार मांडणी आणि वक्तृत्व कौशल्याची प्रेरणादायी स्पर्धा.",
     categoryBadge: "वक्तृत्व",
+    isCompleted: true,
     formUrl: "https://docs.google.com/forms/d/e/1FAIpQLScrlhwa8zDprhn7nL6SEWxTeEBf6Q-wLg7u3DSV-nisaSmL8g/viewform?usp=header"
   },
   {
@@ -161,6 +165,7 @@ export const competitions: CompetitionItem[] = [
     audience: "ज्युनियर ते सिनिअर (मुले आणि मुली), १ ते २ (मुले आणि मुली), ३ ते ५ (मुले आणि मुली)",
     desc: "संस्कृत व मराठी श्लोकांचे सुस्पष्ट उच्चार व पाठांतर सादर करण्याची स्पर्धा.",
     categoryBadge: "संस्कृती व संस्कार",
+    isCompleted: true,
     formUrl: "https://docs.google.com/forms/d/e/1FAIpQLScalAEPK4ZsWaqlPWEcHEGfNj-D95IpE5yGQRVv_S_0tmjVyQ/viewform?usp=header"
   },
 

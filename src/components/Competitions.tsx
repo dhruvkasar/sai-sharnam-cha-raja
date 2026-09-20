@@ -86,17 +86,17 @@ export default function Competitions() {
                     <div className="flex flex-wrap items-center gap-2 mb-1">
                       <span className="px-2.5 py-0.5 rounded-full bg-emerald-500/30 text-emerald-200 border border-emerald-400/40 text-xs font-bold uppercase tracking-wider flex items-center gap-1">
                         <Check size={12} />
-                        <span>आजच्या स्पर्धा संपन्न</span>
+                        <span>स्पर्धा संपन्न</span>
                       </span>
                       <span className="text-xs text-emerald-300/90 font-semibold">
-                        १६ सप्टेंबर २०२६ (Day 1)
+                        १६ ते १९ सप्टेंबर २०२६ (Day 1 ते Day 4)
                       </span>
                     </div>
                     <h3 className="text-lg sm:text-xl font-display font-bold text-white leading-snug">
-                      आज १६ सप्टेंबरच्या Day 1 स्पर्धा (चित्रकला, चमचा गोटी, बेडूक उड्या) संपन्न झाल्या आहेत!
+                      १६, १७, १८ व १९ सप्टेंबरच्या सर्व स्पर्धा संपन्न झाल्या आहेत!
                     </h3>
                     <p className="text-xs sm:text-sm text-emerald-100/85 mt-1 leading-relaxed max-w-3xl">
-                      सर्व सहभागी बालमित्रांचे व विजेत्यांचे हार्दिक अभिनंदन! पुढील दिवसांच्या स्पर्धांसाठी नोंदणी सुरू आहे, खालीलप्रमाणे वेळापत्रक पहा.
+                      चित्रकला, चमचा गोटी, बेडूक उड्या, तीन पायाची शर्यत, बुक बॅलन्सिंग, स्लो सायकल, वक्तृत्व व श्लोक पाठांतर स्पर्धा यशस्वीरीत्या पूर्ण झाल्या आहेत. सर्व सहभागी व विजेत्यांचे हार्दिक अभिनंदन! पुढील २१ ते २४ सप्टेंबरच्या स्पर्धांचे वेळापत्रक खालीलप्रमाणे पहा.
                     </p>
                   </div>
                 </div>
@@ -229,8 +229,8 @@ export default function Competitions() {
               className="mt-4 p-3.5 rounded-xl bg-emerald-950/80 border border-emerald-400/50 text-center max-w-xl mx-auto flex flex-wrap items-center justify-center gap-2 text-xs sm:text-sm text-emerald-200"
             >
               <CheckCircle2 size={15} className="text-emerald-300" />
-              <span className="font-bold text-white">१६ सप्टेंबरच्या संपन्न स्पर्धा:</span>
-              <span>चित्रकला, चमचा गोटी व बेडूक उड्या (एकूण {filteredCompetitions.length} स्पर्धा)</span>
+              <span className="font-bold text-white">संपन्न स्पर्धा (१६ ते १९ सप्टेंबर):</span>
+              <span>Day 1 ते Day 4 मधील सर्व ८ स्पर्धा संपन्न झाल्या आहेत. (एकूण {filteredCompetitions.length} स्पर्धा)</span>
             </motion.div>
           ) : selectedDay === 'upcoming' ? (
             <motion.div
@@ -319,7 +319,7 @@ export default function Competitions() {
                     {comp.isCompleted ? (
                       <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-800 text-white text-xs font-bold shadow-xs">
                         <CheckCircle2 size={13} className="text-emerald-300" />
-                        <span>१६ सप्टेंबर • स्पर्धा संपन्न</span>
+                        <span>{comp.date} • स्पर्धा संपन्न</span>
                       </div>
                     ) : comp.customDateNotice ? (
                       <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-700 text-white text-xs font-bold shadow-xs">
@@ -415,7 +415,7 @@ export default function Competitions() {
                           <span>स्पर्धा संपन्न • नोंदणी बंद</span>
                         </div>
                         <p className="text-[11px] text-center text-emerald-900 font-bold">
-                          🎉 सर्व बालस्पर्धकांचे मनःपूर्वक अभिनंदन!
+                          🎉 सर्व स्पर्धकांचे व विजेत्यांचे मनःपूर्वक अभिनंदन!
                         </p>
                       </div>
                     ) : comp.customActionText ? (
