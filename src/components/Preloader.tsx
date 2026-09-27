@@ -43,7 +43,7 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
         </motion.h2>
 
         {/* Custom Central Diya */}
-        <div className="relative w-48 h-48 flex items-center justify-center mb-8 transform group-hover:scale-105 transition-transform duration-500">
+        <div className="relative w-48 h-48 flex items-center justify-center mb-8">
           
           {/* Flame Outerglow (Ignites) */}
           <motion.div 

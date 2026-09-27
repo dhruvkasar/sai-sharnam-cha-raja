@@ -47,10 +47,10 @@ export default function Invitation() {
           <div className="absolute bottom-3 right-3 text-sona text-xl select-none z-10">𑁍</div>
 
           {/* Top Heading Badge */}
-          <div className="inline-flex items-center gap-2 px-5 py-1.5 bg-sindoor/10 rounded-full text-sindoor font-semibold text-sm md:text-base mb-6 border border-sindoor/25">
-            <Sparkles size={16} />
-            <span>॥ सस्नेह निमंत्रण ॥</span>
-            <Sparkles size={16} />
+          <div className="inline-flex items-center gap-2 px-5 py-1.5 bg-emerald-600/15 rounded-full text-emerald-800 font-semibold text-sm md:text-base mb-6 border border-emerald-600/30">
+            <Sparkles size={16} className="text-emerald-700" />
+            <span>॥ गणेशोत्सव २०२६ संपन्न • सस्नेह कृतज्ञता ॥</span>
+            <Sparkles size={16} className="text-emerald-700" />
           </div>
 
           <p className="text-xs md:text-sm font-semibold tracking-widest text-sona mb-3 uppercase">
@@ -70,12 +70,16 @@ export default function Invitation() {
             </p>
             
             <p>
-              दरवर्षीप्रमाणे यंदाही आपल्या <strong>{societyDetails.name}</strong> गणेशोत्सव मंडळातर्फे लाडक्या बाप्पाचा गणेशोत्सव अत्यंत भक्तिभावाने व उत्साहाने साजरा केला जात आहे.
+              दरवर्षीप्रमाणे यंदाही आपल्या <strong>{societyDetails.name}</strong> गणेशोत्सव मंडळातर्फे लाडक्या बाप्पाचा १२ दिवसांचा गणेशोत्सव आणि सर्व स्पर्धा अत्यंत भक्तिभावाने, शिस्तीत व उत्साहाने यशस्वीरीत्या संपन्न झाल्या आहेत.
             </p>
             
             <p>
-              तरी आपण सर्वांनी सहकुटुंब, सहपरिवार उपस्थित राहून बाप्पाच्या चरणी नतमस्तक व्हावे, दैनंदिन आरती, विविध स्पर्धा व महाप्रसादाचा लाभ घेऊन उत्सवाची शोभा वाढवावी, ही नम्र विनंती.
+              आपण सर्वांनी सहकुटुंब, सहपरिवार उपस्थित राहून बाप्पाच्या चरणी नतमस्तक होऊन, दैनंदिन आरती, विविध स्पर्धा व महाप्रसादाचा लाभ घेऊन उत्सवाची शोभा वाढवली, त्याबद्दल मंडळाकडून आपले मनःपूर्वक आभार!
             </p>
+
+            <div className="p-3 bg-emerald-50 rounded-xl border border-emerald-300 text-emerald-900 font-bold text-base sm:text-lg">
+              🌺 ॥ गणपती बाप्पा मोरया, पुढच्या वर्षी लवकर या! ॥ 🌺
+            </div>
           </div>
 
           {/* Event Highlights Capsule Grid */}

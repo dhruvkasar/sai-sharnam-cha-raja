@@ -79,15 +79,29 @@ export default function Hero({ isLoaded = true }: { isLoaded?: boolean }) {
           />
         </div>
 
+        {/* Festival Completed Inscription - Elegant Cinematic Typography without emojis */}
+        <div className="flex flex-col items-center justify-center text-center mt-2 mb-3 max-w-xl px-4 select-none">
+          <div className="flex items-center justify-center gap-3 mb-1">
+            <div className="w-8 sm:w-16 h-px bg-gradient-to-r from-transparent to-sona/70" />
+            <span className="text-[11px] sm:text-xs font-display font-semibold tracking-widest text-sona/90 uppercase">
+              ॥ गणेशोत्सव २०२६ संपन्न ॥
+            </span>
+            <div className="w-8 sm:w-16 h-px bg-gradient-to-l from-transparent to-sona/70" />
+          </div>
+          <p className="text-sm sm:text-lg md:text-xl font-display font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-100 via-amber-200 to-yellow-200 drop-shadow-md tracking-wide">
+            गणपती बाप्पा मोरया, पुढच्या वर्षी लवकर या!
+          </p>
+        </div>
+
         {/* Scroll Down Indicator */}
         <a
           href="#overview"
-          className="inline-flex flex-col items-center gap-1.5 text-sona/80 hover:text-sona transition-colors mt-6 group cursor-pointer"
+          className="inline-flex flex-col items-center gap-1.5 text-sona/80 hover:text-sona transition-colors mt-4 group cursor-pointer"
         >
-          <span className="text-xs tracking-widest uppercase font-semibold font-display text-amber-200/90 group-hover:text-amber-100">
-            उत्सव माहिती व वेळापत्रक
+          <span className="text-xs tracking-widest uppercase font-semibold font-display text-amber-200/90">
+            पुढील गणेशोत्सव काऊंटडाऊन २०२७
           </span>
-          <ChevronDown size={22} className="animate-bounce text-kesari group-hover:text-amber-300" />
+          <ChevronDown size={22} className="text-kesari" />
         </a>
 
       </div>

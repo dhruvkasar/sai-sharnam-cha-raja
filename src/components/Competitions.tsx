@@ -22,18 +22,15 @@ import {
 } from 'lucide-react';
 
 export default function Competitions() {
-  const [selectedDay, setSelectedDay] = useState<number | 'all' | 'tba' | 'completed' | 'upcoming'>('all');
+  const [selectedDay, setSelectedDay] = useState<number | 'all' | 'tba' | 'completed'>('all');
   const [showNoticeBanner, setShowNoticeBanner] = useState(true);
   const [showChangesTooltip, setShowChangesTooltip] = useState(false);
 
   const completedCount = competitions.filter(c => c.isCompleted).length;
-  const upcomingCount = competitions.filter(c => !c.isCompleted).length;
 
   const filteredCompetitions = competitions.filter(comp => {
-    if (selectedDay === 'all') return true;
-    if (selectedDay === 'completed') return !!comp.isCompleted;
-    if (selectedDay === 'upcoming') return !comp.isCompleted;
-    if (selectedDay === 'tba') return !!comp.customDateNotice;
+    if (selectedDay === 'all' || selectedDay === 'completed') return true;
+    if (selectedDay === 'tba') return comp.day === 0;
     return comp.day === selectedDay;
   });
 
@@ -52,22 +49,22 @@ export default function Competitions() {
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Section Header */}
         <div className="text-center mb-10">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sona/20 text-yellow-300 border border-sona/40 text-xs sm:text-sm font-semibold tracking-wide mb-4 shadow-sm">
-            <Sparkles size={15} className="text-yellow-300" />
-            <span>स्पर्धेचे संपूर्ण वेळापत्रक • १६ सप्टेंबर ते २४ सप्टेंबर २०२६</span>
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/25 text-emerald-200 border border-emerald-400/50 text-xs sm:text-sm font-semibold tracking-wide mb-4 shadow-sm">
+            <CheckCircle2 size={15} className="text-emerald-300" />
+            <span>सर्व स्पर्धा यशस्वीरीत्या संपन्न • गणेशोत्सव २०२६</span>
           </div>
 
           <h2 className="text-4xl md:text-6xl font-display mb-4 text-haldi drop-shadow-sm">
-            भव्य स्पर्धा महोत्सव
+            भव्य स्पर्धा महोत्सव (संपन्न)
           </h2>
           <div className="w-32 h-1 bg-sona mx-auto mb-5 rounded-full" />
           <p className="text-base sm:text-lg md:text-xl text-haldi/85 max-w-3xl mx-auto leading-relaxed">
-            साई शरणम सोसायटीमधील सर्व लहान मुले, तरुण, महिला व ज्येष्ठ नागरिकांसाठी मनोरंजक, सांस्कृतिक व क्रीडा स्पर्धांचे भव्य आयोजन. आजच आपला सहभाग निश्चित करा!
+            साई शरणम सोसायटीमधील सर्व लहान मुले, महिला, तरुण व ज्येष्ठ नागरिकांसाठी आयोजित केलेल्या सर्व १७ स्पर्धा मोठ्या जल्लोषात आणि उत्साहात संपन्न झाल्या आहेत. सर्व विजेत्यांचे मनःपूर्वक अभिनंदन!
           </p>
         </div>
 
         {/* ======================================================== */}
-        {/* TOOL: TODAY (16 SEP) COMPLETED NOTIFICATION ALERT BANNER */}
+        {/* ALL COMPETITIONS COMPLETED NOTIFICATION ALERT BANNER */}
         {/* ======================================================== */}
         <AnimatePresence>
           {showNoticeBanner && (
@@ -83,23 +80,23 @@ export default function Competitions() {
               <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 relative z-10">
                 <div className="flex items-start gap-3.5">
                   <div className="p-2.5 bg-emerald-500/20 border border-emerald-400/40 rounded-xl text-emerald-300 shrink-0 mt-0.5 shadow-sm">
-                    <CheckCircle2 size={24} className="text-emerald-300 animate-pulse" />
+                    <Trophy size={24} className="text-yellow-300 animate-pulse" />
                   </div>
                   <div>
                     <div className="flex flex-wrap items-center gap-2 mb-1">
                       <span className="px-2.5 py-0.5 rounded-full bg-emerald-500/30 text-emerald-200 border border-emerald-400/40 text-xs font-bold uppercase tracking-wider flex items-center gap-1">
                         <Check size={12} />
-                        <span>स्पर्धा संपन्न</span>
+                        <span>सर्व स्पर्धा व गणेशोत्सव संपन्न</span>
                       </span>
-                      <span className="text-xs text-emerald-300/90 font-semibold">
-                        १६ ते १९ सप्टेंबर २०२६ (Day 1 ते Day 4)
+                      <span className="text-xs text-yellow-300 font-semibold">
+                        एकूण {competitions.length} स्पर्धा यशस्वीरीत्या पूर्ण
                       </span>
                     </div>
                     <h3 className="text-lg sm:text-xl font-display font-bold text-white leading-snug">
-                      १६, १७, १८ व १९ सप्टेंबरच्या सर्व स्पर्धा संपन्न झाल्या आहेत!
+                      सर्व स्पर्धा आणि गणेशोत्सव २०२६ मोठ्या उत्साहात संपन्न झाले आहेत!
                     </h3>
-                    <p className="text-xs sm:text-sm text-emerald-100/85 mt-1 leading-relaxed max-w-3xl">
-                      चित्रकला, चमचा गोटी, बेडूक उड्या, तीन पायाची शर्यत, बुक बॅलन्सिंग, स्लो सायकल, वक्तृत्व व श्लोक पाठांतर स्पर्धा यशस्वीरीत्या पूर्ण झाल्या आहेत. सर्व सहभागी व विजेत्यांचे हार्दिक अभिनंदन! पुढील २१ ते २४ सप्टेंबरच्या स्पर्धांचे वेळापत्रक खालीलप्रमाणे पहा.
+                    <p className="text-xs sm:text-sm text-emerald-100/90 mt-1 leading-relaxed max-w-3xl">
+                      चित्रकला, चमचा गोटी, बेडूक उड्या, तीन पायाची शर्यत, बुक बॅलन्सिंग, स्लो सायकल, वक्तृत्व, श्लोक पाठांतर, पाककला, गायन, नृत्य, फुगे स्पर्धा, जोडप्यांचे खेळ, संगीत खुर्ची, वेशभूषा तसेच चेस व बुद्धिबळ या सर्व स्पर्धा यशस्वीरीत्या पार पडल्या. सर्व सहभागी आणि विजेत्यांचे मनःपूर्वक अभिनंदन!
                     </p>
                   </div>
                 </div>
@@ -108,28 +105,15 @@ export default function Competitions() {
                 <div className="flex flex-wrap items-center gap-2 self-stretch sm:self-auto sm:shrink-0 justify-end">
                   <button
                     type="button"
-                    onClick={() => setSelectedDay('completed')}
-                    className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer shadow-sm border ${
-                      selectedDay === 'completed'
+                    onClick={() => setSelectedDay('all')}
+                    className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer shadow-sm border ${
+                      selectedDay === 'all'
                         ? 'bg-emerald-400 text-emerald-950 border-white'
                         : 'bg-emerald-900/80 hover:bg-emerald-800 text-emerald-200 border-emerald-500/40'
                     }`}
                   >
                     <PartyPopper size={13} />
-                    <span>संपन्न स्पर्धा पहा ({completedCount})</span>
-                  </button>
-
-                  <button
-                    type="button"
-                    onClick={() => setSelectedDay('upcoming')}
-                    className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer shadow-sm border ${
-                      selectedDay === 'upcoming'
-                        ? 'bg-sona text-shai border-yellow-200'
-                        : 'bg-black/40 hover:bg-black/60 text-yellow-200 border-sona/40'
-                    }`}
-                  >
-                    <Trophy size={13} />
-                    <span>आगामी स्पर्धा पहा ({upcomingCount})</span>
+                    <span>सर्व १७ स्पर्धा पहा</span>
                   </button>
 
                   <button
@@ -146,48 +130,20 @@ export default function Competitions() {
           )}
         </AnimatePresence>
 
-        {/* Quick Filter Tool (All, Upcoming, Completed, TBA) + Changes Tooltip */}
+        {/* Quick Filter Tool + Changes Tooltip */}
         <div className="mb-4 flex flex-wrap items-center justify-center gap-2 select-none text-xs sm:text-sm relative">
           <button
             type="button"
             onClick={() => setSelectedDay('all')}
-            title="सर्व स्पर्धा पाहा (एकूण १२ स्पर्धा)"
+            title="सर्व संपन्न झालेल्या १७ स्पर्धा पाहा"
             className={`px-3.5 py-1.5 rounded-full font-semibold transition-all border flex items-center gap-1.5 cursor-pointer ${
               selectedDay === 'all'
-                ? 'bg-sona text-shai border-yellow-200 shadow-md font-bold scale-105'
-                : 'bg-black/40 text-haldi/85 border-sona/30 hover:bg-black/60 hover:text-white'
-            }`}
-          >
-            <Trophy size={14} />
-            <span>सर्व स्पर्धा ({competitions.length})</span>
-          </button>
-
-          <button
-            type="button"
-            onClick={() => setSelectedDay('completed')}
-            title="१६, १७, १८ आणि १९ सप्टेंबरच्या संपन्न झालेल्या स्पर्धा पाहा"
-            className={`px-3.5 py-1.5 rounded-full font-semibold transition-all border flex items-center gap-1.5 cursor-pointer ${
-              selectedDay === 'completed'
-                ? 'bg-emerald-600 text-white border-emerald-300 shadow-md font-bold scale-105'
-                : 'bg-emerald-950/70 text-emerald-200 border-emerald-600/50 hover:bg-emerald-900'
+                ? 'bg-emerald-500 text-white border-white shadow-md font-bold scale-105'
+                : 'bg-emerald-950/70 text-emerald-200 border-emerald-500/40 hover:bg-emerald-900'
             }`}
           >
             <CheckCircle2 size={14} className="text-emerald-300" />
-            <span>संपन्न स्पर्धा ({completedCount})</span>
-          </button>
-
-          <button
-            type="button"
-            onClick={() => setSelectedDay('upcoming')}
-            title="चालू आणि पुढील तारखांच्या आगामी स्पर्धा पाहा"
-            className={`px-3.5 py-1.5 rounded-full font-semibold transition-all border flex items-center gap-1.5 cursor-pointer ${
-              selectedDay === 'upcoming'
-                ? 'bg-sona text-shai border-yellow-200 shadow-md font-bold scale-105'
-                : 'bg-black/40 text-haldi/85 border-sona/30 hover:bg-black/60 hover:text-white'
-            }`}
-          >
-            <Sparkles size={14} className="text-yellow-300" />
-            <span>चालू / आगामी स्पर्धा ({upcomingCount})</span>
+            <span>सर्व संपन्न स्पर्धा ({completedCount})</span>
           </button>
 
           {/* Tooltip trigger button for changes info */}
@@ -196,16 +152,16 @@ export default function Competitions() {
               type="button"
               onClick={() => setShowChangesTooltip(!showChangesTooltip)}
               onMouseEnter={() => setShowChangesTooltip(true)}
-              title="नवीन बदल व सूचना पाहा (कलिक करा)"
-              aria-label="स्पर्धेतील महत्त्वाचे बदल पाहा"
-              className={`px-3 py-1.5 rounded-full text-xs font-semibold transition-all border flex items-center gap-1.5 cursor-pointer shadow-sm ${
+              title="नवीन झालेले बदल व सूचना पाहा (क्लिक करा)"
+              aria-label="स्पर्धेतील व उत्सवातील महत्त्वाचे बदल पाहा"
+              className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all border flex items-center gap-1.5 cursor-pointer shadow-sm ${
                 showChangesTooltip 
                   ? 'bg-amber-400 text-amber-950 border-white ring-2 ring-amber-300' 
-                  : 'bg-amber-500/20 text-yellow-300 border-amber-400/50 hover:bg-amber-500/30'
+                  : 'bg-amber-500/25 text-yellow-200 border-amber-400/60 hover:bg-amber-500/40'
               }`}
             >
               <HelpCircle size={14} className="text-yellow-300 shrink-0" />
-              <span>बदल / सूचना टूलटिप</span>
+              <span className="font-bold">बदल / सूचना टूलटिप</span>
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-yellow-300"></span>
@@ -220,12 +176,12 @@ export default function Competitions() {
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: 8, scale: 0.95 }}
                   transition={{ duration: 0.15 }}
-                  className="absolute right-0 sm:left-1/2 sm:-translate-x-1/2 top-full mt-2 w-80 sm:w-96 p-4 rounded-xl bg-gradient-to-br from-amber-950/95 via-stone-900/95 to-amber-950/95 border-2 border-yellow-400/70 shadow-2xl backdrop-blur-md z-50 text-left text-xs"
+                  className="absolute right-0 sm:left-1/2 sm:-translate-x-1/2 top-full mt-2 w-80 sm:w-96 p-4 rounded-xl bg-gradient-to-br from-amber-950/98 via-stone-900/98 to-emerald-950/98 border-2 border-yellow-400/80 shadow-2xl backdrop-blur-md z-50 text-left text-xs"
                 >
-                  <div className="flex items-start justify-between gap-2 mb-2 pb-2 border-b border-yellow-400/30">
+                  <div className="flex items-start justify-between gap-2 mb-2.5 pb-2 border-b border-yellow-400/30">
                     <div className="flex items-center gap-1.5 text-yellow-300 font-bold">
                       <Sparkles size={14} className="text-yellow-400" />
-                      <span>नवीन झालेले बदल व अपडेट्स</span>
+                      <span>नवीन झालेले बदल व सूचना (ताजी माहिती)</span>
                     </div>
                     <button
                       type="button"
@@ -237,34 +193,40 @@ export default function Competitions() {
                     </button>
                   </div>
 
-                  <div className="space-y-2 text-haldi/90">
-                    <div className="flex items-start gap-2 bg-black/40 p-2 rounded-lg border border-emerald-500/30">
-                      <CheckCircle2 size={14} className="text-emerald-400 shrink-0 mt-0.5" />
+                  <div className="space-y-2.5 text-haldi/90">
+                    <div className="flex items-start gap-2 bg-black/50 p-2.5 rounded-lg border border-emerald-500/40">
+                      <CheckCircle2 size={15} className="text-emerald-400 shrink-0 mt-0.5" />
                       <div>
-                        <strong className="text-emerald-300">१६, १७, १८ आणि १९ सप्टेंबर:</strong>
-                        <p className="text-[11px] text-gray-200">या दिवसांच्या सर्व ८ स्पर्धा यशस्वीरीत्या संपन्न झाल्या आहेत. (त्यावर 'संपन्न' शिक्का आहे)</p>
+                        <strong className="text-emerald-300 block mb-0.5">सर्व स्पर्धा संपन्न:</strong>
+                        <p className="text-[11px] text-gray-200 leading-snug">
+                          १६ ते २४ सप्टेंबरच्या सर्व स्पर्धा आणि चेस/बुद्धिबळ अशा एकूण सर्व १७ स्पर्धा यशस्वीरीत्या पार पडल्या आहेत. सर्व स्पर्धांवर 'संपन्न' शिक्का लावण्यात आला आहे.
+                        </p>
                       </div>
                     </div>
 
-                    <div className="flex items-start gap-2 bg-black/40 p-2 rounded-lg border border-amber-500/30">
-                      <Heart size={14} className="text-pink-400 shrink-0 mt-0.5" />
+                    <div className="flex items-start gap-2 bg-black/50 p-2.5 rounded-lg border border-amber-500/40">
+                      <Trophy size={15} className="text-yellow-300 shrink-0 mt-0.5" />
                       <div>
-                        <strong className="text-yellow-300">२३ सप्टेंबर - जोडप्यांचे खेळ:</strong>
-                        <p className="text-[11px] text-gray-200">फक्त लग्न झालेले जोडपे सहभागी होऊ शकतात. नाव नोंदणी सुरू आहे!</p>
+                        <strong className="text-yellow-300 block mb-0.5">गणेशोत्सव २०२६ सांगता:</strong>
+                        <p className="text-[11px] text-gray-200 leading-snug">
+                          १२ दिवसांचा लाडक्या बाप्पाचा गणेशोत्सव अत्यंत भक्तीमय वातावरणात व अनंत चतुर्दशी विसर्जनासह संपन्न झाला आहे. "गणपती बाप्पा मोरया, पुढच्या वर्षी लवकर या!"
+                        </p>
                       </div>
                     </div>
 
-                    <div className="flex items-start gap-2 bg-black/40 p-2 rounded-lg border border-cyan-500/30">
-                      <Bell size={14} className="text-cyan-400 shrink-0 mt-0.5" />
+                    <div className="flex items-start gap-2 bg-black/50 p-2.5 rounded-lg border border-pink-500/40">
+                      <Heart size={15} className="text-pink-400 shrink-0 mt-0.5" />
                       <div>
-                        <strong className="text-cyan-300">बुद्धिबळ (चेस) स्पर्धा:</strong>
-                        <p className="text-[11px] text-gray-200">या स्पर्धेची तारीख लवकरच सोसायटी व्हॉट्सअॅप ग्रुपवर जाहीर करण्यात येईल.</p>
+                        <strong className="text-pink-300 block mb-0.5">मनःपूर्वक आभार व अभिनंदन:</strong>
+                        <p className="text-[11px] text-gray-200 leading-snug">
+                          सोसायटीतील सर्व सहभागी स्पर्धक, विजयी स्पर्धक, देणगीदार व स्वयंसेवकांचे मंडळाकडून हार्दिक आभार!
+                        </p>
                       </div>
                     </div>
                   </div>
 
                   <div className="mt-3 pt-2 text-[10px] text-haldi/70 border-t border-yellow-400/20 text-center">
-                    टूलटिप बंद करण्यासाठी 'X' किंवा बाहेर क्लिक करा
+                    टूलटिप बंद करण्यासाठी 'X' वर क्लिक करा
                   </div>
                 </motion.div>
               )}
@@ -275,6 +237,20 @@ export default function Competitions() {
         {/* Day Filter Pills (Sticky-friendly or horizontal scroll) */}
         <div className="mb-10">
           <div className="flex items-center justify-start sm:justify-center gap-2 overflow-x-auto pb-3 pt-1 px-1 no-scrollbar text-xs sm:text-sm select-none">
+            <button
+              type="button"
+              onClick={() => setSelectedDay('all')}
+              className={`px-3.5 py-2 rounded-full font-medium transition-all whitespace-nowrap border flex items-center gap-1.5 cursor-pointer shadow-sm ${
+                selectedDay === 'all'
+                  ? 'bg-emerald-500 text-white border-white shadow-md font-bold scale-105'
+                  : 'bg-emerald-950/60 text-emerald-200 border-emerald-500/40 hover:bg-emerald-900/80'
+              }`}
+            >
+              <CheckCircle2 size={13} className="text-emerald-300 shrink-0" />
+              <span>सर्व दिवस (Day 1 ते Day 8)</span>
+              <span className="text-[10px] px-1.5 py-0.2 bg-emerald-800 text-emerald-100 rounded-md font-bold">संपन्न</span>
+            </button>
+
             {competitionDays.map(cd => (
               <button
                 key={cd.day}
@@ -283,14 +259,12 @@ export default function Competitions() {
                 className={`px-3.5 py-2 rounded-full font-medium transition-all whitespace-nowrap border flex items-center gap-1.5 cursor-pointer shadow-sm ${
                   selectedDay === cd.day
                     ? 'bg-sona text-shai border-yellow-200 shadow-md font-semibold scale-105'
-                    : cd.isCompleted
-                    ? 'bg-emerald-950/60 text-emerald-200 border-emerald-500/40 hover:bg-emerald-900/80'
-                    : 'bg-black/35 text-haldi/85 border-sona/30 hover:bg-black/50 hover:text-white'
+                    : 'bg-emerald-950/60 text-emerald-200 border-emerald-500/40 hover:bg-emerald-900/80'
                 }`}
               >
-                {cd.isCompleted && <CheckCircle2 size={13} className="text-emerald-400 shrink-0" />}
+                <CheckCircle2 size={13} className="text-emerald-400 shrink-0" />
                 <span>{cd.dayLabel}: {cd.date}</span>
-                {cd.isCompleted && <span className="text-[10px] px-1.5 py-0.2 bg-emerald-800 text-emerald-100 rounded-md font-bold">संपन्न</span>}
+                <span className="text-[10px] px-1.5 py-0.2 bg-emerald-800 text-emerald-100 rounded-md font-bold">संपन्न</span>
               </button>
             ))}
 
@@ -300,79 +274,35 @@ export default function Competitions() {
               className={`px-3.5 py-2 rounded-full font-medium transition-all whitespace-nowrap border flex items-center gap-1.5 cursor-pointer shadow-sm ${
                 selectedDay === 'tba'
                   ? 'bg-sona text-shai border-yellow-200 shadow-md font-semibold scale-105'
-                  : 'bg-black/35 text-haldi/85 border-sona/30 hover:bg-black/50 hover:text-white'
+                  : 'bg-emerald-950/60 text-emerald-200 border-emerald-500/40 hover:bg-emerald-900/80'
               }`}
             >
-              <Bell size={14} className="text-yellow-300" />
-              <span>तारीख लवकरच जाहीर</span>
+              <CheckCircle2 size={13} className="text-emerald-400 shrink-0" />
+              <span>विशेष स्पर्धा (चेस व बुद्धिबळ)</span>
+              <span className="text-[10px] px-1.5 py-0.2 bg-emerald-800 text-emerald-100 rounded-md font-bold">संपन्न</span>
             </button>
           </div>
 
-          {/* Active Day Info Banner */}
-          {selectedDay === 'completed' ? (
-            <motion.div
-              initial={{ opacity: 0, y: -5 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="mt-4 p-3.5 rounded-xl bg-emerald-950/80 border border-emerald-400/50 text-center max-w-xl mx-auto flex flex-wrap items-center justify-center gap-2 text-xs sm:text-sm text-emerald-200"
-            >
-              <CheckCircle2 size={15} className="text-emerald-300" />
-              <span className="font-bold text-white">संपन्न स्पर्धा (१६ ते १९ सप्टेंबर):</span>
-              <span>Day 1 ते Day 4 मधील सर्व ८ स्पर्धा संपन्न झाल्या आहेत. (एकूण {filteredCompetitions.length} स्पर्धा)</span>
-            </motion.div>
-          ) : selectedDay === 'upcoming' ? (
-            <motion.div
-              initial={{ opacity: 0, y: -5 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="mt-4 p-3.5 rounded-xl bg-black/40 border border-sona/30 text-center max-w-xl mx-auto flex flex-wrap items-center justify-center gap-2 text-xs sm:text-sm text-yellow-200"
-            >
-              <Sparkles size={15} className="text-yellow-300" />
-              <span className="font-bold text-sona">चालू व आगामी स्पर्धा:</span>
-              <span>पुढील दिवसांच्या एकूण {filteredCompetitions.length} स्पर्धांचे वेळापत्रक</span>
-            </motion.div>
-          ) : selectedDay === 'tba' ? (
-            <motion.div
-              initial={{ opacity: 0, y: -5 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="mt-4 p-3.5 rounded-xl bg-black/40 border border-amber-400/40 text-center max-w-xl mx-auto flex flex-wrap items-center justify-center gap-3 text-xs sm:text-sm text-yellow-200"
-            >
-              <span className="font-bold text-amber-300 flex items-center gap-1.5">
-                <Bell size={14} />
-                <span>विशेष सूचना:</span>
-              </span>
-              <span className="text-haldi/90">
-                चेस व बुद्धिबळ स्पर्धेची तारीख व वेळ लवकरच सोसायटी ग्रुपवर जाहीर केली जाईल.
-              </span>
-            </motion.div>
-          ) : selectedDay !== 'all' && (
-            <motion.div
-              initial={{ opacity: 0, y: -5 }}
-              animate={{ opacity: 1, y: 0 }}
-              className={`mt-4 p-3.5 rounded-xl border text-center max-w-xl mx-auto flex flex-wrap items-center justify-center gap-3 text-xs sm:text-sm ${
-                competitionDays.find(d => d.day === selectedDay)?.isCompleted
-                  ? 'bg-emerald-950/80 border-emerald-400/50 text-emerald-200'
-                  : 'bg-black/40 border-sona/30 text-yellow-200'
-              }`}
-            >
-              <span className="font-bold text-sona flex items-center gap-1">
-                {competitionDays.find(d => d.day === selectedDay)?.isCompleted && (
-                  <CheckCircle2 size={14} className="text-emerald-300 inline" />
-                )}
-                <span>{competitionDays.find(d => d.day === selectedDay)?.dayLabel}: {competitionDays.find(d => d.day === selectedDay)?.date}</span>
-                {competitionDays.find(d => d.day === selectedDay)?.isCompleted && (
-                  <span className="text-xs text-emerald-300 font-bold">(संपन्न)</span>
-                )}
-              </span>
-              <span className="hidden sm:inline">•</span>
-              <span className="flex items-center gap-1">
-                <Clock size={14} className="text-kesari" />
-                <span>वेळ: {competitionDays.find(d => d.day === selectedDay)?.time}</span>
-              </span>
-              <span className="hidden sm:inline">•</span>
-              <span className="text-haldi/90">
-                एकूण {filteredCompetitions.length} स्पर्धा
-              </span>
-            </motion.div>
-          )}
+          {/* Active Filter Info Banner */}
+          <motion.div
+            initial={{ opacity: 0, y: -5 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="mt-4 p-3.5 rounded-xl bg-emerald-950/80 border border-emerald-400/50 text-center max-w-xl mx-auto flex flex-wrap items-center justify-center gap-2 text-xs sm:text-sm text-emerald-200"
+          >
+            <CheckCircle2 size={15} className="text-emerald-300" />
+            <span className="font-bold text-white">
+              {selectedDay === 'all' 
+                ? 'सर्व १७ स्पर्धा यशस्वीरीत्या संपन्न:' 
+                : selectedDay === 'tba'
+                ? 'विशेष स्पर्धा (चेस व बुद्धिबळ):'
+                : `${competitionDays.find(d => d.day === selectedDay)?.dayLabel} (${competitionDays.find(d => d.day === selectedDay)?.date}):`}
+            </span>
+            <span>
+              {selectedDay === 'all'
+                ? 'सर्व स्पर्धा पूर्ण झाल्या असून सर्व विजेत्यांचे मनःपूर्वक अभिनंदन!'
+                : `या दिवसाच्या एकूण ${filteredCompetitions.length} स्पर्धा संपन्न झाल्या आहेत.`}
+            </span>
+          </motion.div>
         </div>
 
         {/* Competitions Cards Grid */}
@@ -544,11 +474,11 @@ export default function Competitions() {
         <div className="mt-14 p-6 sm:p-8 rounded-3xl bg-black/45 border-2 border-sona/40 backdrop-blur-md flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl">
           <div className="space-y-1.5 text-center md:text-left">
             <h4 className="text-xl sm:text-2xl font-display font-bold text-haldi flex items-center justify-center md:justify-start gap-2">
-              <Sparkles size={20} className="text-sona" />
-              <span>स्पर्धा सहभाग व नावनोंदणी</span>
+              <Trophy size={20} className="text-sona" />
+              <span>स्पर्धा महोत्सव सांगता व आभार</span>
             </h4>
             <p className="text-sm sm:text-base text-haldi/80 max-w-xl">
-              स्पर्धेची पूर्वतयारी व नियोजन सुलभ व्हावे म्हणून सर्व स्पर्धकांनी वेळेपूर्वी आपली नावे समितीकडे नोंदवावीत.
+              सर्व १७ स्पर्धांमध्ये उत्स्फूर्त सहभाग घेतल्याबद्दल सर्व लहान मुले, महिला, युवक व ज्येष्ठ नागरिकांचे मनःपूर्वक आभार! विजेत्यांचे अभिनंदन!
             </p>
           </div>
 
@@ -562,10 +492,10 @@ export default function Competitions() {
             </a>
 
             <a
-              href="#contact"
+              href="#committee"
               className="w-full sm:w-auto px-6 py-3.5 rounded-2xl bg-white/10 hover:bg-white/20 active:scale-95 text-haldi font-semibold text-sm sm:text-base transition-all border border-sona/40 flex items-center justify-center gap-2"
             >
-              <span>संपर्क व माहिती</span>
+              <span>समिती सदस्य माहिती</span>
             </a>
           </div>
         </div>

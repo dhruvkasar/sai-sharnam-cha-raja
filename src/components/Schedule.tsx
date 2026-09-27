@@ -1,16 +1,20 @@
 import { aartiTimings, specialScheduleEvents } from '../data';
 import { motion } from 'motion/react';
-import { Sun, Moon, Sparkles, Calendar, Clock } from 'lucide-react';
+import { Sun, Moon, Sparkles, Calendar, Clock, CheckCircle2 } from 'lucide-react';
 
 export default function Schedule() {
   return (
     <section id="schedule" className="py-24 px-6 bg-haldi relative">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-16">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-700/10 text-emerald-800 border border-emerald-600/30 text-xs sm:text-sm font-semibold tracking-wide mb-3">
+            <CheckCircle2 size={15} className="text-emerald-700" />
+            <span>धार्मिक सोहळे व महापूजा संपन्न • गणेशोत्सव २०२६</span>
+          </div>
           <h2 className="text-4xl md:text-6xl font-display mb-4 text-sindoor">आरती व पूजा वेळापत्रक</h2>
           <div className="w-32 h-1 bg-sona mx-auto rounded-full"></div>
           <p className="text-lg text-shai/75 mt-4 max-w-xl mx-auto">
-            दररोज सकाळी व संध्याकाळी नित्य आरती व पूजेमध्ये सर्व भक्तांनी सहकुटुंब सहभागी व्हावे.
+            उत्सवादरम्यान दररोज सकाळी व संध्याकाळी नित्य आरती, महापूजा व प्रसादाचा लाभ सर्व भाविकांनी भक्तिभावाने घेतला.
           </p>
         </div>
 
@@ -30,7 +34,7 @@ export default function Schedule() {
                 <Sun size={32} />
               </div>
               <div>
-                <span className="text-xs font-bold uppercase tracking-wider text-kesari/80">नित्य पूजा</span>
+                <span className="text-xs font-bold uppercase tracking-wider text-kesari/80">नित्य पूजा (संपन्न)</span>
                 <h3 className="text-3xl font-display text-shai">सकाळची आरती</h3>
               </div>
             </div>
@@ -54,7 +58,7 @@ export default function Schedule() {
                 <Moon size={32} />
               </div>
               <div>
-                <span className="text-xs font-bold uppercase tracking-wider text-mor/80">नित्य पूजा</span>
+                <span className="text-xs font-bold uppercase tracking-wider text-mor/80">नित्य पूजा (संपन्न)</span>
                 <h3 className="text-3xl font-display text-shai">संध्याकाळची आरती</h3>
               </div>
             </div>
@@ -65,13 +69,13 @@ export default function Schedule() {
           </motion.div>
         </div>
 
-        {/* Special Schedule Events: Ganesh Aagman, Pujan & Satyanarayan Puja */}
+        {/* Special Schedule Events: Ganesh Aagman, Pujan & Satyanarayan Puja & Visarjan */}
         <div className="space-y-6">
           <div className="flex items-center gap-3 justify-center mb-6">
             <div className="w-12 h-0.5 bg-sona/60" />
             <h3 className="text-xl sm:text-2xl font-display font-bold text-shai/90 flex items-center gap-2">
               <Sparkles size={20} className="text-kesari" />
-              <span>प्रमुख धार्मिक सोहळे व महापूजा</span>
+              <span>प्रमुख धार्मिक सोहळे व महापूजा (संपन्न)</span>
             </h3>
             <div className="w-12 h-0.5 bg-sona/60" />
           </div>
@@ -91,9 +95,15 @@ export default function Schedule() {
 
                 <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 relative z-10">
                   <div className="space-y-3">
-                    <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-sona/20 text-yellow-300 border border-sona/30 text-xs sm:text-sm font-semibold tracking-wide">
-                      <Sparkles size={14} className="text-yellow-300" />
-                      <span>{event.badge}</span>
+                    <div className="flex items-center gap-2">
+                      <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-sona/20 text-yellow-300 border border-sona/30 text-xs sm:text-sm font-semibold tracking-wide">
+                        <Sparkles size={14} className="text-yellow-300" />
+                        <span>{event.badge}</span>
+                      </div>
+                      <span className="px-2.5 py-0.5 rounded-full bg-emerald-600/40 text-emerald-200 border border-emerald-400/40 text-xs font-bold flex items-center gap-1">
+                        <CheckCircle2 size={12} className="text-emerald-300" />
+                        <span>संपन्न</span>
+                      </span>
                     </div>
 
                     <h4 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-white tracking-wide">

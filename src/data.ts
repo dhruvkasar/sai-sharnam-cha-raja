@@ -12,7 +12,12 @@ export const societyDetails = {
   durationText: "१२ दिवस",
   address: "साई शरणम सोसायटी, कल्याण",
   contact: "+91 91377 95166",
-  upiId: "mr.siddheshwagh17-2@okhdfcbank",
+  festivalStatus: "संपन्न",
+  farewellMessage: "गणपती बाप्पा मोरया, पुढच्या वर्षी लवकर या!",
+  concludingNote: "साई शरणम चा राजा गणेशोत्सव २०२६ व सर्व स्पर्धा अत्यंत उत्साहात व भक्तिभावाने संपन्न झाल्या आहेत. सर्व भाविक व सभासदांचे मनःपूर्वक आभार!",
+  nextYear: 2027,
+  nextGaneshChaturthi: "४ सप्टेंबर २०२७ (शनिवार)",
+  nextTargetDate: "2027-09-04T00:00:00",
   instagram: {
     handle: "saisharnamcharaja",
     url: "https://www.instagram.com/saisharnamcharaja/"
@@ -42,10 +47,10 @@ export const competitionDays = [
   { day: 2, date: "१७ सप्टेंबर", dayLabel: "Day 2", time: "सायंकाळी ६:०० ते ८:०० मध्ये", isCompleted: true },
   { day: 3, date: "१८ सप्टेंबर", dayLabel: "Day 3", time: "सायंकाळी ६:०० ते ८:०० मध्ये", isCompleted: true },
   { day: 4, date: "१९ सप्टेंबर", dayLabel: "Day 4", time: "सायंकाळी ६:०० ते ८:०० मध्ये", isCompleted: true },
-  { day: 5, date: "२१ सप्टेंबर", dayLabel: "Day 5", time: "सायंकाळी ६:०० ते १०:०० मध्ये" },
-  { day: 6, date: "२२ सप्टेंबर", dayLabel: "Day 6", time: "सायंकाळी ६:०० ते १०:०० मध्ये" },
-  { day: 7, date: "२३ सप्टेंबर", dayLabel: "Day 7", time: "सायंकाळी ६:०० ते ८:०० मध्ये" },
-  { day: 8, date: "२४ सप्टेंबर", dayLabel: "Day 8", time: "सायंकाळी ६:०० ते १०:०० मध्ये" }
+  { day: 5, date: "२१ सप्टेंबर", dayLabel: "Day 5", time: "सायंकाळी ६:०० ते १०:०० मध्ये", isCompleted: true },
+  { day: 6, date: "२२ सप्टेंबर", dayLabel: "Day 6", time: "सायंकाळी ६:०० ते १०:०० मध्ये", isCompleted: true },
+  { day: 7, date: "२३ सप्टेंबर", dayLabel: "Day 7", time: "सायंकाळी ६:०० ते ८:०० मध्ये", isCompleted: true },
+  { day: 8, date: "२४ सप्टेंबर", dayLabel: "Day 8", time: "सायंकाळी ६:०० ते १०:०० मध्ये", isCompleted: true }
 ];
 
 export const competitions: CompetitionItem[] = [
@@ -169,7 +174,7 @@ export const competitions: CompetitionItem[] = [
     formUrl: "https://docs.google.com/forms/d/e/1FAIpQLScalAEPK4ZsWaqlPWEcHEGfNj-D95IpE5yGQRVv_S_0tmjVyQ/viewform?usp=header"
   },
 
-  // Day 5: २१ सप्टेंबर (6:00 PM to 10:00 PM)
+  // Day 5: २१ सप्टेंबर (6:00 PM to 10:00 PM) - संपन्न (Completed)
   {
     id: 9,
     day: 5,
@@ -181,10 +186,11 @@ export const competitions: CompetitionItem[] = [
     audience: "महिला (Women)",
     desc: "स्वादिष्ट आणि नाविन्यपूर्ण खाद्यपदार्थांची चवदार पाककला स्पर्धा.",
     categoryBadge: "पाककला",
+    isCompleted: true,
     formUrl: "https://docs.google.com/forms/d/e/1FAIpQLSerFf9a2z7xkrJfAyUlh5bnC96Ozewv4siPnrpKayh9KKSasQ/viewform?usp=header"
   },
 
-  // Day 6: २२ सप्टेंबर (6:00 PM to 10:00 PM)
+  // Day 6: २२ सप्टेंबर (6:00 PM to 10:00 PM) - संपन्न (Completed)
   {
     id: 10,
     day: 6,
@@ -196,6 +202,7 @@ export const competitions: CompetitionItem[] = [
     audience: "मुले, मुली, महिला",
     desc: "भक्तीगीत, भावगीत व शास्त्रीय गायनाची सुमधुर सूर स्पर्धा.",
     categoryBadge: "संगीत",
+    isCompleted: true,
     formUrl: "https://docs.google.com/forms/d/e/1FAIpQLSdRNeufSUGF2YZEDUS6Dhx7xLDoMRYHiPhvyz4XevFPGPtkIg/viewform?usp=header"
   },
   {
@@ -209,10 +216,11 @@ export const competitions: CompetitionItem[] = [
     audience: "मुले, मुली, महिला",
     desc: "पारंपारिक, लोकनृत्य व आधुनिक नृत्याची बहारदार रंगारंग स्पर्धा.",
     categoryBadge: "नृत्य",
+    isCompleted: true,
     formUrl: "https://docs.google.com/forms/d/e/1FAIpQLSeWtBsWvKlMkAVI9FLQZmgTkqvCShSGU-pfVmHpk8SBMwHY-w/viewform?usp=header"
   },
 
-  // Day 7: २३ सप्टेंबर
+  // Day 7: २३ सप्टेंबर - संपन्न (Completed)
   {
     id: 12,
     day: 7,
@@ -224,6 +232,7 @@ export const competitions: CompetitionItem[] = [
     audience: "६ ते ८ (मुले आणि मुली), ९ ते १० (मुले आणि मुली)",
     desc: "वेगवेगळ्या मनोरंजक व गमतीशीर फुग्यांच्या खेळांची स्पर्धा.",
     categoryBadge: "मनोरंजन",
+    isCompleted: true,
     formUrl: "https://docs.google.com/forms/d/e/1FAIpQLScVW7HZurqUneS6edzmVM2F4QUshYkFicFyqN2WrKURW23boQ/viewform?usp=header"
   },
   {
@@ -237,10 +246,11 @@ export const competitions: CompetitionItem[] = [
     audience: "फक्त लग्न झालेले जोडपे (विवाहित दांपत्य)",
     desc: "सोसायटीतील सर्व विवाहित जोडप्यांसाठी विशेष मनोरंजक, मजेशीर आणि हास्यविनोदी खेळ.",
     categoryBadge: "जोडप्यांचे खेळ",
-    customActionText: "फक्त लग्न झालेले जोडपे"
+    isCompleted: true,
+    customActionText: "स्पर्धा संपन्न"
   },
 
-  // Day 8: २४ सप्टेंबर (6:00 PM to 10:00 PM)
+  // Day 8: २४ सप्टेंबर (6:00 PM to 10:00 PM) - संपन्न (Completed)
   {
     id: 13,
     day: 8,
@@ -252,6 +262,7 @@ export const competitions: CompetitionItem[] = [
     audience: "पुरुष (१० नंतरचे), महिला (१० नंतरचे)",
     desc: "संगीताच्या तालावर थरारक व चुरशीची सर्वप्रिय संगीत खुर्ची स्पर्धा.",
     categoryBadge: "पारंपारिक खेळ",
+    isCompleted: true,
     formUrl: "https://docs.google.com/forms/d/e/1FAIpQLSde-WpGZ4Tt39l658gp-ylzlPkA7BelD--Ay7FAI2rj5OYGSQ/viewform?usp=header"
   },
   {
@@ -265,43 +276,44 @@ export const competitions: CompetitionItem[] = [
     audience: "मुले, मुली, महिला, पुरुष",
     desc: "ऐतिहासिक, सामाजिक व पौराणिक पात्रांची सुंदर वेशभूषा स्पर्धा.",
     categoryBadge: "वेशभूषा",
+    isCompleted: true,
     formUrl: "https://docs.google.com/forms/d/e/1FAIpQLSe9yn5WsrRHhJotBzSVGFRxOVdm1MxBDHduS2_R28T1Z1TeyA/viewform?usp=header"
   },
 
-  // विशेष स्पर्धा - तारीख लवकरच जाहीर होणार
+  // विशेष स्पर्धा - संपन्न (Completed)
   {
     id: 15,
     day: 0,
-    dayLabel: "लवकरच जाहीर",
-    date: "सोसायटी ग्रुपवर कळवले जाईल",
-    time: "सोसायटी ग्रुपवर कळवले जाईल",
+    dayLabel: "विशेष स्पर्धा",
+    date: "संपन्न",
+    time: "यशस्वीरीत्या संपन्न",
     title: "चेस स्पर्धा",
     englishTitle: "Chess Competition",
     audience: "मुले, मुली, पुरुष, महिला (सर्व गट)",
-    desc: "एकाग्रता, बुद्धिमत्ता व अचूक डावपेचांची थरारक चेस स्पर्धा. आपल्या चाली रचून विजय मिळवा!",
+    desc: "एकाग्रता, बुद्धिमत्ता व अचूक डावपेचांची थरारक चेस स्पर्धा. सर्व सहभागींचे अभिनंदन!",
     categoryBadge: "बौद्धिक खेळ",
-    formUrl: "https://docs.google.com/forms/d/e/1FAIpQLSf8SvP5pHjLdPECbFpEVTcL-hVxA9wB8oeHpBeGg3atni0szg/viewform?usp=publish-editor",
-    customDateNotice: "तारीख व वेळ लवकरच सोसायटी ग्रुपवर कळवण्यात येईल"
+    isCompleted: true,
+    customDateNotice: "ही स्पर्धा यशस्वीरीत्या संपन्न झाली आहे."
   },
   {
     id: 16,
     day: 0,
-    dayLabel: "लवकरच जाहीर",
-    date: "सोसायटी ग्रुपवर कळवले जाईल",
-    time: "सोसायटी ग्रुपवर कळवले जाईल",
+    dayLabel: "विशेष स्पर्धा",
+    date: "संपन्न",
+    time: "यशस्वीरीत्या संपन्न",
     title: "बुद्धिबळ स्पर्धा",
     englishTitle: "Buddhibal Championship",
     audience: "मुले, मुली, पुरुष, महिला (सर्व गट)",
-    desc: "पारंपरिक व आधुनिक डावांची चुरस, विचारशक्ती आणि रणनीतीची महापरीक्षा.",
+    desc: "पारंपरिक व आधुनिक डावांची चुरस, विचारशक्ती आणि रणनीतीची महापरीक्षा. सर्व विजेत्यांचे मनःपूर्वक अभिनंदन!",
     categoryBadge: "बौद्धिक खेळ",
-    formUrl: "https://docs.google.com/forms/d/e/1FAIpQLSdOZ-Z-god5i98gPKyRaAYNxoTsGaXRX-Lvs75_-AcJXky32Q/viewform?usp=dialog",
-    customDateNotice: "तारीख व वेळ लवकरच सोसायटी ग्रुपवर कळवण्यात येईल"
+    isCompleted: true,
+    customDateNotice: "ही स्पर्धा यशस्वीरीत्या संपन्न झाली आहे."
   }
 ];
 
 export const aartiTimings = [
-  { time: "सकाळी १०:३०", desc: "नित्य सकाळची आरती व दर्शन" },
-  { time: "संध्याकाळी ८:३०", desc: "नित्य सांज आरती व महाप्रसाद" }
+  { time: "सकाळी १०:३०", desc: "नित्य सकाळची आरती व दर्शन (उत्सव संपन्न)" },
+  { time: "संध्याकाळी ८:३०", desc: "नित्य सांज आरती व महाप्रसाद (उत्सव संपन्न)" }
 ];
 
 export interface SpecialScheduleEvent {
@@ -312,6 +324,7 @@ export interface SpecialScheduleEvent {
   desc: string;
   time: string;
   highlight?: boolean;
+  isCompleted?: boolean;
 }
 
 export const specialScheduleEvents: SpecialScheduleEvent[] = [
@@ -320,26 +333,39 @@ export const specialScheduleEvents: SpecialScheduleEvent[] = [
     day: "रविवार",
     title: "श्री गणेश आगमन सोहळा",
     badge: "महा आगमन",
-    desc: "आपल्या लाडक्या 'साई शरणम चा राजा'चे ढोल-ताशांच्या गजरात व भक्तीमय वातावरणात वाजत-गाजत भव्य आगमन.",
+    desc: "आपल्या लाडक्या 'साई शरणम चा राजा'चे ढोल-ताशांच्या गजरात व भक्तीमय वातावरणात वाजत-गाजत भव्य आगमन संपन्न झाले.",
     time: "१३ सप्टेंबर (रविवार)",
-    highlight: true
+    highlight: true,
+    isCompleted: true
   },
   {
     date: "१४ सप्टेंबर २०२६",
     day: "सोमवार",
     title: "श्री गणेश प्रतिष्ठापना व पूजन",
     badge: "स्थापना व पूजन",
-    desc: "वेदमंत्रांच्या जयघोषात श्री गणेशाची विधिवत प्रतिष्ठापना व दुपारचे महापूजन सोहळा.",
+    desc: "वेदमंत्रांच्या जयघोषात श्री गणेशाची विधिवत प्रतिष्ठापना व दुपारचे महापूजन सोहळा संपन्न झाला.",
     time: "१४ सप्टेंबर • दुपारी ३:३० वाजता",
-    highlight: true
+    highlight: true,
+    isCompleted: true
   },
   {
     date: "२४ सप्टेंबर २०२६",
     day: "गुरुवार",
     title: "श्री सत्यनारायण महापूजा",
     badge: "विशेष महापूजा",
-    desc: "सोसायटीतील सर्व भाविकांसाठी सामूहिक श्री सत्यनारायण महापूजा व तीर्थप्रसाद सोहळा.",
-    time: "सकाळी १०:३० वाजता"
+    desc: "सोसायटीतील सर्व भाविकांसाठी सामूहिक श्री सत्यनारायण महापूजा व महाप्रसाद सोहळा भक्तिभावाने संपन्न झाला.",
+    time: "सकाळी १०:३० वाजता",
+    isCompleted: true
+  },
+  {
+    date: "२५ सप्टेंबर २०२६",
+    day: "शुक्रवार",
+    title: "अनंत चतुर्दशी विसर्जन मिरवणूक",
+    badge: "भव्य विसर्जन सोहळा",
+    desc: "गुलाल, ढोल-ताशांच्या गजरात आणि भावपूर्ण वातावरणात 'साई शरणम चा राजा'चा भावुक निरोप व विसर्जन सोहळा संपन्न झाला. गणपती बाप्पा मोरया, पुढच्या वर्षी लवकर या!",
+    time: "दुपारपासून विसर्जन मिरवणूक",
+    highlight: true,
+    isCompleted: true
   }
 ];
 

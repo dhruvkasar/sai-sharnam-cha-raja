@@ -21,9 +21,9 @@ const MemberPhoto = ({
   const borderPadding = size === "xl" || size === "lg" ? "p-1.5" : "p-1";
 
   return (
-    <div className={`relative ${containerSizes[size]} mx-auto shrink-0 group-hover:scale-105 transition-transform duration-500`}>
+    <div className={`relative ${containerSizes[size]} mx-auto shrink-0`}>
       {/* Outer Golden Glow & Halo Ring */}
-      <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-sona via-kesari to-sona/50 blur-[2px] opacity-75 group-hover:opacity-100 transition-opacity" />
+      <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-sona via-kesari to-sona/50 blur-[2px] opacity-75" />
 
       {/* Frame Container */}
       <div className={`relative w-full h-full rounded-full ${borderPadding} bg-gradient-to-b from-[#E6C364] via-sona to-[#7A5317] shadow-xl overflow-hidden`}>
@@ -32,7 +32,7 @@ const MemberPhoto = ({
             <img
               src={`/committee/${member.photoId}.jpg`}
               alt={member.name}
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              className="w-full h-full object-cover"
               onError={(e) => {
                 const img = e.currentTarget;
                 const currentSrc = img.src;
@@ -302,7 +302,7 @@ export default function Committee() {
         >
           <div 
             onClick={() => setSelectedMember(president)}
-            className="group relative bg-gradient-to-b from-[#2B1B15] via-[#241712] to-[#1A100C] rounded-3xl p-6 sm:p-8 md:p-10 border-2 border-sona/40 hover:border-sona transition-all duration-300 shadow-2xl shadow-black/60 overflow-hidden cursor-pointer hover:scale-[1.01]"
+            className="group relative bg-gradient-to-b from-[#2B1B15] via-[#241712] to-[#1A100C] rounded-3xl p-6 sm:p-8 md:p-10 border-2 border-sona/40 hover:border-sona transition-colors duration-300 shadow-2xl shadow-black/60 overflow-hidden cursor-pointer"
           >
             {/* Corner Traditional Accents */}
             <div className="absolute top-3 left-4 text-sona/40 text-lg select-none">𑁍</div>
@@ -379,7 +379,7 @@ export default function Committee() {
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.4, delay: i * 0.08 }}
                 onClick={() => setSelectedMember(member)}
-                className="group relative bg-gradient-to-b from-[#281A14] to-[#1E130E] rounded-2xl p-6 border border-sona/20 hover:border-sona transition-all duration-300 hover:-translate-y-1.5 shadow-xl hover:shadow-2xl hover:shadow-black/50 flex flex-col items-center text-center overflow-hidden cursor-pointer"
+                className="group relative bg-gradient-to-b from-[#281A14] to-[#1E130E] rounded-2xl p-6 border border-sona/20 hover:border-sona transition-colors duration-300 shadow-xl flex flex-col items-center text-center overflow-hidden cursor-pointer"
               >
                 {/* Subtle top amber highlight line */}
                 <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-sona/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />

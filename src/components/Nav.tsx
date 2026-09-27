@@ -13,10 +13,9 @@ export default function Nav() {
   // Exact section order matching website structure
   const links = [
     { name: 'मुख्यपान', href: '#home', id: 'home' },
-    { name: 'निमंत्रण', href: '#invitation', id: 'invitation' },
-    { name: 'स्पर्धा', href: '#competitions', id: 'competitions' },
-    { name: 'वेळापत्रक', href: '#schedule', id: 'schedule' },
+    { name: 'काऊंटडाऊन २०२७', href: '#overview', id: 'overview' },
     { name: 'समिती', href: '#committee', id: 'committee' },
+    { name: 'संपर्क', href: '#contact', id: 'contact' },
   ];
 
   // Scroll listener: Hide navbar at the very top (Hero), slide down smoothly on scroll
@@ -35,7 +34,7 @@ export default function Nav() {
       lastScrollY.current = currentScrollY;
 
       // Track active section for indicator
-      const sectionIds = ['home', 'overview', 'invitation', 'competitions', 'schedule', 'committee', 'contact'];
+      const sectionIds = ['home', 'overview', 'committee', 'contact'];
       const scrollPosition = currentScrollY + 200;
 
       for (let i = sectionIds.length - 1; i >= 0; i--) {
@@ -43,8 +42,7 @@ export default function Nav() {
         if (el) {
           const top = el.offsetTop;
           if (scrollPosition >= top) {
-            const mappedId = sectionIds[i] === 'overview' ? 'home' : sectionIds[i];
-            setActiveSection(mappedId);
+            setActiveSection(sectionIds[i]);
             break;
           }
         }

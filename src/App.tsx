@@ -2,9 +2,6 @@ import { useState, useRef, useEffect } from 'react';
 import Preloader from './components/Preloader';
 import Hero from './components/Hero';
 import EventOverview from './components/EventOverview';
-import Invitation from './components/Invitation';
-import Competitions from './components/Competitions';
-import Schedule from './components/Schedule';
 import Committee from './components/Committee';
 import Footer from './components/Footer';
 import Nav from './components/Nav';
@@ -49,18 +46,7 @@ export default function App() {
 
   const handleLightDiya = () => {
     setIsLoaded(true);
-    if (audioRef.current) {
-      audioRef.current.volume = 0.8;
-      audioRef.current
-        .play()
-        .then(() => {
-          setIsPlaying(true);
-        })
-        .catch((err) => {
-          console.warn("Audio autoplay blocked by browser:", err);
-          setIsPlaying(false);
-        });
-    }
+    // Song is muted by default as requested
   };
 
   const toggleAudio = () => {
@@ -68,8 +54,10 @@ export default function App() {
     
     if (isPlaying) {
       audioRef.current.pause();
+      audioRef.current.muted = true;
       setIsPlaying(false);
     } else {
+      audioRef.current.muted = false;
       audioRef.current.volume = 0.8;
       audioRef.current
         .play()
@@ -84,12 +72,13 @@ export default function App() {
 
   return (
     <div className="relative selection:bg-kesari selection:text-white">
-      {/* Background Shehnai / Aarti Audio */}
+      {/* Background Shehnai / Aarti Audio - Muted by default */}
       <audio 
         ref={audioRef} 
         src="/aarti.mp3"
         loop 
-        preload="auto"
+        preload="none"
+        muted
         onPlay={() => setIsPlaying(true)}
         onPause={() => setIsPlaying(false)}
         onError={(e) => console.error("Audio error:", e)}
@@ -102,9 +91,6 @@ export default function App() {
       <main className={`transition-opacity duration-1000 ${isLoaded ? 'opacity-100' : 'opacity-0 h-screen overflow-hidden'}`}>
         <Hero isLoaded={isLoaded} />
         <EventOverview />
-        <Invitation />
-        <Competitions />
-        <Schedule />
         <Committee />
         <Footer />
       </main>
@@ -113,9 +99,9 @@ export default function App() {
       {isLoaded && (
         <button 
           onClick={toggleAudio} 
-          className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-gradient-to-tr from-[#991B1B] via-sindoor to-kesari text-haldi rounded-full flex items-center justify-center shadow-2xl shadow-sindoor/40 hover:scale-110 active:scale-95 transition-all border-2 border-sona/50 group"
-          aria-label={isPlaying ? "संगीत थांबवा (Pause music)" : "संगीत सुरू करा (Play music)"}
-          title={isPlaying ? "संगीत थांबवा" : "संगीत सुरू करा"}
+          className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-gradient-to-tr from-[#991B1B] via-sindoor to-kesari text-haldi rounded-full flex items-center justify-center shadow-2xl shadow-sindoor/40 hover:brightness-110 active:scale-95 transition-all border-2 border-sona/50 group cursor-pointer"
+          aria-label={isPlaying ? "संगीत म्यूट करा (Mute music)" : "संगीत सुरू करा (Play music)"}
+          title={isPlaying ? "संगीत म्यूट करा" : "संगीत म्यूट आहे • सुरू करण्यासाठी क्लिक करा"}
         >
           {isPlaying ? (
             <div className="relative flex items-center justify-center">
